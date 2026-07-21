@@ -37,6 +37,7 @@ export default function SchoolsShowcase() {
               src={school.logoSrc}
               alt={school.logoAlt}
               fill
+              sizes="160px"
               className="object-contain"
             />
           </div>
