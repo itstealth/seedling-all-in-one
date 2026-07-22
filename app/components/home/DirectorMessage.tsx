@@ -3,7 +3,7 @@ import { LINKS, external } from "./links";
 
 export default function DirectorMessage() {
   return (
-    <section className="bg-banyan-950 py-20 lg:py-28">
+    <section id="director" className="bg-banyan-950 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <figure>
@@ -16,13 +16,8 @@ export default function DirectorMessage() {
                 className="object-cover object-top"
               />
             </div>
-            <figcaption className="mt-5">
-              <p className="font-display text-xl font-semibold text-paper-50">
-                Dr. Sandeep Bakshi
-              </p>
-              <p className="mt-1.5 text-sm text-paper-200/70">
-                CEO &amp; Director, Seedling Group of Institutions
-              </p>
+            <figcaption className="mt-5 text-sm text-paper-200/70">
+              CEO &amp; Director, Seedling Group of Institutions
             </figcaption>
           </figure>
 
@@ -31,6 +26,10 @@ export default function DirectorMessage() {
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
               Director&rsquo;s communiqué
             </p>
+
+            <h2 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-tight text-paper-50 sm:text-4xl">
+              Dr. Sandeep Bakshi
+            </h2>
 
             <blockquote className="mt-7">
               <p className="font-display text-2xl font-medium leading-snug text-paper-50 lg:text-[1.75rem]">

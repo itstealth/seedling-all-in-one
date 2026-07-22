@@ -50,6 +50,6 @@ test('links to each on-page section', () => {
   render(<Nav />)
   expect(screen.getByRole('link', { name: /the journey/i })).toHaveAttribute('href', '#journey')
   expect(screen.getByRole('link', { name: /our schools/i })).toHaveAttribute('href', '#schools')
-  expect(screen.getByRole('link', { name: /leadership/i })).toHaveAttribute('href', '#leadership')
+  expect(screen.getByRole('link', { name: /leadership/i })).toHaveAttribute('href', '#director')
   expect(screen.getByRole('link', { name: /choose a school/i })).toHaveAttribute('href', '#schools')
 })

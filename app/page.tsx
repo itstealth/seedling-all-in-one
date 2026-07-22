@@ -1,12 +1,9 @@
 import Nav from './components/home/Nav'
 import Hero from './components/home/Hero'
-import Journey from './components/home/Journey'
 import SchoolsShowcase from './components/home/SchoolsShowcase'
-import Cambridge from './components/home/Cambridge'
-import Pillars from './components/home/Pillars'
+import Journey from './components/home/Journey'
 import DirectorMessage from './components/home/DirectorMessage'
-import VisionMission from './components/home/VisionMission'
-import Leadership from './components/home/Leadership'
+import Principal from './components/home/Principal'
 import AlumniSpotlight from './components/home/AlumniSpotlight'
 import Footer from './components/home/Footer'
 
@@ -15,14 +12,17 @@ export default function Page() {
     <>
       <Nav />
       <main>
+        {/* Seedling Group of Schools */}
         <Hero />
-        <Journey />
+        {/* SPS — SMHS — Cambridge */}
         <SchoolsShowcase />
-        <Cambridge />
-        <Pillars />
+        {/* The journey from Nursery to University */}
+        <Journey />
+        {/* Dr. Sandeep Bakshi */}
         <DirectorMessage />
-        <VisionMission />
-        <Leadership />
+        {/* Dr. Preeti Bakshi */}
+        <Principal />
+        {/* Alumni */}
         <AlumniSpotlight />
       </main>
       <Footer />

@@ -12,14 +12,23 @@ test('renders the group homepage headline', () => {
   ).toBeInTheDocument()
 })
 
-test('renders all homepage sections', () => {
+test('renders the brief’s sections in order', () => {
+  render(<Page />)
+  const sections = screen
+    .getAllByRole('heading', { level: 2 })
+    .map((heading) => heading.textContent)
+
+  expect(sections).toEqual([
+    'Three campuses, two boards, one standard.',
+    'A child joins us at three. We are still here at eighteen.',
+    'Dr. Sandeep Bakshi',
+    'Dr. Preeti Bakshi',
+    'The Pride of Seedling',
+  ])
+})
+
+test('renders the navigation and footer', () => {
   render(<Page />)
   expect(screen.getAllByRole('navigation').length).toBeGreaterThan(0)
-  expect(screen.getByRole('heading', { name: /a child joins us at three/i })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: /three campuses, two boards/i })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: /six commitments/i })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: /our mission/i })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: /our leadership/i })).toBeInTheDocument()
-  expect(screen.getByRole('heading', { name: /the pride of seedling/i })).toBeInTheDocument()
   expect(screen.getByRole('contentinfo')).toBeInTheDocument()
 })

@@ -26,9 +26,9 @@ const SCHOOL_TABS = [
 ];
 
 const SECTIONS = [
-  { label: "The Journey", href: "#journey" },
   { label: "Our Schools", href: "#schools" },
-  { label: "Leadership", href: "#leadership" },
+  { label: "The Journey", href: "#journey" },
+  { label: "Leadership", href: "#director" },
 ];
 
 export default function Nav() {

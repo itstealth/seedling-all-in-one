@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Our schools">
-            <h2 className="eyebrow text-marigold-400">Our schools</h2>
+            <p className="eyebrow text-marigold-400">Our schools</p>
             <ul className="mt-5 space-y-3.5">
               {SCHOOL_LINKS.map((link) => (
                 <li key={link.label}>
@@ -52,7 +52,7 @@ export default function Footer() {
           </nav>
 
           <nav aria-label="The group">
-            <h2 className="eyebrow text-marigold-400">The group</h2>
+            <p className="eyebrow text-marigold-400">The group</p>
             <ul className="mt-5 space-y-3.5">
               {GROUP_LINKS.map((link) => (
                 <li key={link.label}>
