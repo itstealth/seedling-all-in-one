@@ -22,7 +22,7 @@ const tiro = Tiro_Devanagari_Sanskrit({
 export const metadata: Metadata = {
   title: "Seedling Group of Schools — Nursery to University",
   description:
-    "Since 1992, the Seedling Group has carried students from play group to university across CBSE and Cambridge campuses. 20,000+ students, 5,000+ alumni.",
+    "Since 1992, the Seedling Group has carried students from play group to university across CBSE and Cambridge campuses in Jaipur. 20,000+ students, 5,000+ alumni.",
 };
 
 export default function RootLayout({

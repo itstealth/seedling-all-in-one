@@ -10,15 +10,21 @@ test('names Dr. Preeti Bakshi with her portrait', () => {
   expect(screen.getByAltText('Dr. Preeti Bakshi')).toBeInTheDocument()
 })
 
-test('lists her principalship of both CBSE schools', () => {
+test('uses the designation the group publishes, not a principalship', () => {
+  render(<Principal />)
+  expect(
+    screen.getByText('Executive Director, Seedling Group of Institutions')
+  ).toBeInTheDocument()
+  // The statutory principals are Shruti Kukar (SPS) and Nidhi Adha (SMHS)
+  // per each school's CBSE mandatory disclosure — never claim the post here.
+  expect(screen.queryByText(/^Principal$/)).not.toBeInTheDocument()
+})
+
+test('lists both CBSE schools she directs', () => {
   const { container } = render(<Principal />)
-  const roles = Array.from(container.querySelectorAll('dt')).map(
+  const schools = Array.from(container.querySelectorAll('dt')).map(
     (dt) => dt.textContent
   )
-  const schools = Array.from(container.querySelectorAll('dd')).map(
-    (dd) => dd.textContent
-  )
-  expect(roles).toEqual(['Principal', 'Principal'])
   expect(schools).toEqual([
     'Seedling Public School',
     'Seedling Modern High School',

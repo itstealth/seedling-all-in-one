@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const DESIGNATIONS = [
-  { role: "Principal", school: "Seedling Public School" },
-  { role: "Principal", school: "Seedling Modern High School" },
+const OVERSEES = [
+  { school: "Seedling Public School", board: "CBSE" },
+  { school: "Seedling Modern High School", board: "CBSE" },
 ];
 
 export default function Principal() {
@@ -13,33 +13,51 @@ export default function Principal() {
           <div className="order-2 lg:order-1">
             <p className="eyebrow flex items-center gap-3 text-banyan-600">
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
-              Principal
+              Executive Director
             </p>
 
             <h2 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-tight text-banyan-900 sm:text-4xl">
               Dr. Preeti Bakshi
             </h2>
 
-            <dl className="mt-8 divide-y divide-banyan-800/12 border-y border-banyan-800/12">
-              {DESIGNATIONS.map((item) => (
+            <p className="mt-4 text-lg text-ink-muted">
+              Executive Director, Seedling Group of Institutions
+            </p>
+
+            <blockquote className="mt-8 border-l-2 border-marigold-500 pl-6">
+              <p className="font-display text-xl leading-snug text-banyan-900">
+                “Give the pupils something to do, not something to learn; and
+                the doing is of such a nature as to demand thinking; learning
+                naturally results.”
+              </p>
+              <cite className="mt-3 block text-sm not-italic text-ink-muted">
+                John Dewey — the principle behind{" "}
+                <span className="font-semibold text-banyan-700">
+                  Creating Fresh Pathways
+                </span>
+              </cite>
+            </blockquote>
+
+            <dl className="mt-9 divide-y divide-banyan-800/12 border-y border-banyan-800/12">
+              {OVERSEES.map((item) => (
                 <div
                   key={item.school}
                   className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4"
                 >
-                  <dt className="font-display text-lg font-semibold text-banyan-900">
-                    {item.role}
-                  </dt>
-                  <dd className="text-[0.9375rem] text-ink-muted">
+                  <dt className="font-display text-base font-semibold text-banyan-900">
                     {item.school}
+                  </dt>
+                  <dd className="text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-banyan-600">
+                    {item.board}
                   </dd>
                 </div>
               ))}
             </dl>
 
-            <p className="mt-8 max-w-xl text-lg leading-relaxed text-ink-muted">
-              Dr. Preeti Bakshi leads both CBSE campuses of the Seedling Group,
-              holding a single academic standard across the schools that carry a
-              student from Class I through to the board years.
+            <p className="mt-7 max-w-xl text-[0.9375rem] leading-relaxed text-ink-muted">
+              Academic direction across both CBSE campuses of the group, holding
+              one standard through the years that carry a student from Class I
+              to the boards.
             </p>
           </div>
 

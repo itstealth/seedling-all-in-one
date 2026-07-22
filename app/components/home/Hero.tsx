@@ -29,7 +29,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-28">
         <p className="eyebrow flex items-center gap-3 text-marigold-400">
           <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
-          Ghaziabad · Established 1992
+          Jaipur · Established 1992
         </p>
 
         <h1 className="mt-6 max-w-4xl font-display text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-paper-50 sm:text-6xl lg:text-7xl">
