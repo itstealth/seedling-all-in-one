@@ -4,26 +4,31 @@ const LEADERS = [
   {
     name: "Late Ms. Mohini Bakshi",
     designation: "Founder Director",
+    theme: "The Legacy goes on",
     photo: "/people/mohini.png",
   },
   {
     name: "Dr. Sandeep Bakshi",
     designation: "CEO & Director, Seedling Group of Institutions",
+    theme: "Forever New Frontiers",
     photo: "/people/sandeep.png",
   },
   {
     name: "Dr. Preeti Bakshi",
     designation: "Executive Director, Seedling Group of Institutions",
+    theme: "Creating Fresh Pathways",
     photo: "/people/preeti.png",
   },
   {
     name: "Ms. Akansha Bakshi",
     designation: "Joint Director",
+    theme: "Engagement that Empowers",
     photo: "/people/akansha.png",
   },
   {
     name: "Ms. Aishwarya Bakshi",
     designation: "Joint Director",
+    theme: "Promoting Global Citizenship",
     photo: "/people/aishwarya.png",
   },
 ] as const;
@@ -65,6 +70,9 @@ export default function Leadership() {
                 </p>
                 <p className="mt-1.5 text-[0.8125rem] leading-relaxed text-ink-muted">
                   {leader.designation}
+                </p>
+                <p className="mt-2.5 text-[0.75rem] font-semibold uppercase tracking-[0.1em] text-banyan-600">
+                  {leader.theme}
                 </p>
               </figcaption>
             </figure>
