@@ -20,3 +20,9 @@ test('renders a card with logo and link for each school', () => {
     'https://seedling-international-academy.vercel.app'
   )
 })
+
+test('labels each school with its examination board', () => {
+  render(<SchoolsShowcase />)
+  expect(screen.getAllByText('CBSE')).toHaveLength(2)
+  expect(screen.getByText('Cambridge')).toBeInTheDocument()
+})

@@ -1,31 +1,83 @@
+import Image from "next/image";
+import { LINKS, external } from "./links";
+
 const ALUMNI = [
-  { name: 'Harshil Mathur', title: 'CEO, Razorpay' },
-  { name: 'Abhishek Tripathi', title: 'Wing Commander' },
-  { name: 'Shashank Jain', title: 'Head of Architecture & Design' },
-] as const
+  {
+    name: "Harshil Mathur",
+    title: "CEO, Razorpay",
+    photo: "/people/harshil.png",
+  },
+  {
+    name: "Abhishek Tripathi",
+    title: "Wing Commander",
+    photo: "/people/abhishek.png",
+  },
+  {
+    name: "Shashank Jain",
+    title: "Head of Architecture & Design",
+    photo: "/people/shashank.png",
+  },
+] as const;
 
 export default function AlumniSpotlight() {
   return (
-    <section className="px-6 py-16 text-center md:px-12">
-      <h2 className="text-2xl font-bold tracking-tight md:text-3xl">
-        The Pride of Seedling
-      </h2>
-      <div className="mt-10 grid gap-8 md:grid-cols-3">
-        {ALUMNI.map((alum) => (
-          <div key={alum.name} className="rounded-2xl border border-gray-200 p-8">
-            <p className="text-lg font-semibold">{alum.name}</p>
-            <p className="mt-2 text-sm text-gray-600">{alum.title}</p>
+    <section id="alumni" className="py-20 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 lg:px-8">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div className="max-w-2xl">
+            <p className="eyebrow flex items-center gap-3 text-banyan-600">
+              <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+              Community · Connection · Collaboration
+            </p>
+            <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-banyan-900 sm:text-4xl lg:text-5xl">
+              The Pride of Seedling
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-ink-muted">
+              Five thousand alumni, across fifty nations — in enterprise, in
+              uniform, in design studios.
+            </p>
           </div>
-        ))}
+
+          <a
+            href={LINKS.alumni}
+            {...external}
+            className="group inline-flex items-center gap-2 rounded-full border border-banyan-800/20 px-5 py-3 text-sm font-semibold text-banyan-800 transition-colors hover:border-banyan-700 hover:bg-banyan-800 hover:text-paper-50"
+          >
+            See more alumni
+            <span
+              aria-hidden="true"
+              className="transition-transform group-hover:translate-x-1"
+            >
+              →
+            </span>
+          </a>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-3 lg:mt-16">
+          {ALUMNI.map((alum) => (
+            <figure
+              key={alum.name}
+              className="overflow-hidden rounded-2xl border border-banyan-800/12 bg-paper-100"
+            >
+              <div className="relative aspect-[4/3] bg-banyan-800/8">
+                <Image
+                  src={alum.photo}
+                  alt={alum.name}
+                  fill
+                  sizes="(min-width: 640px) 33vw, 100vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <figcaption className="p-5">
+                <p className="font-display text-lg font-semibold text-banyan-900">
+                  {alum.name}
+                </p>
+                <p className="mt-1 text-sm text-ink-muted">{alum.title}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
-      <a
-        href="https://seedlingschools.com/alumni.php"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-10 inline-block text-sm font-semibold underline"
-      >
-        See more alumni
-      </a>
     </section>
-  )
+  );
 }

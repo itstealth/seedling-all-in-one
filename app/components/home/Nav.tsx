@@ -1,47 +1,70 @@
+import { LINKS, external } from "./links";
+
+const SECTIONS = [
+  { label: "The Journey", href: "#journey" },
+  { label: "Our Schools", href: "#schools" },
+  { label: "Leadership", href: "#leadership" },
+];
+
 export default function Nav() {
   return (
-    <nav className="flex items-center justify-between px-6 py-4 md:px-12">
-      <span className="text-lg font-semibold tracking-tight">
-        Seedling Group of Schools
-      </span>
-      <ul className="flex items-center gap-6 text-sm font-medium">
-        <li>
+    <header className="sticky top-0 z-50 border-b border-banyan-800/10 bg-paper-50/85 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4 lg:px-8">
+        <a href="#top" className="flex items-baseline gap-2.5">
+          <span className="font-display text-lg font-semibold tracking-tight text-banyan-800">
+            Seedling
+          </span>
+          <span className="hidden text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-ink-muted sm:inline">
+            Group of Schools
+          </span>
+        </a>
+
+        <ul className="hidden items-center gap-7 text-sm font-medium text-ink-muted lg:flex">
+          {SECTIONS.map((section) => (
+            <li key={section.href}>
+              <a
+                href={section.href}
+                className="transition-colors hover:text-banyan-700"
+              >
+                {section.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <a
+              href={LINKS.alumni}
+              {...external}
+              className="transition-colors hover:text-banyan-700"
+            >
+              Alumni
+            </a>
+          </li>
+        </ul>
+
+        <div className="flex items-center gap-1">
           <a
-            href="https://sps.seedlingschools.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={LINKS.sps}
+            {...external}
+            className="hidden rounded-full px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-banyan-700 sm:block"
           >
             SPS
           </a>
-        </li>
-        <li>
           <a
-            href="https://smhs.seedlingschools.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={LINKS.smhs}
+            {...external}
+            className="hidden rounded-full px-3 py-2 text-sm font-medium text-ink-muted transition-colors hover:text-banyan-700 sm:block"
           >
             SMHS
           </a>
-        </li>
-        <li>
           <a
-            href="https://seedling-international-academy.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href={LINKS.cambridge}
+            {...external}
+            className="rounded-full bg-banyan-800 px-4 py-2 text-sm font-semibold text-paper-50 transition-colors hover:bg-banyan-700"
           >
             Cambridge
           </a>
-        </li>
-        <li>
-          <a
-            href="https://seedlingschools.com/alumni.php"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Alumni
-          </a>
-        </li>
-      </ul>
-    </nav>
-  )
+        </div>
+      </nav>
+    </header>
+  );
 }
