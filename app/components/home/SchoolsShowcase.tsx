@@ -3,50 +3,46 @@ import { LINKS, external } from "./links";
 
 const SCHOOLS = [
   {
-    name: "SPS",
-    full: "Seedling Public School",
-    logoSrc: "/logos/sps-logo.png",
-    logoAlt: "SPS logo",
-    logoClass: "w-36",
+    name: "Seedling Public School",
+    short: "SPS",
     board: "CBSE",
-    grades: "Class I – XII",
+    tagline: "The foundation years, built to last",
     photo: "/campus/feature-1.jpg",
-    description:
-      "The foundation years — reading, reasoning and curiosity built into daily habit.",
-    facts: ["CBSE affiliated", "Co-educational", "Ghaziabad"],
     href: LINKS.sps,
+    // Deep banyan green, light type
+    wash: "bg-banyan-800",
+    blend: "opacity-60",
+    text: "text-paper-50",
+    meta: "text-paper-100/75",
+    arrow: "text-marigold-400",
   },
   {
-    name: "SMHS",
-    full: "Seedling Modern High School",
-    logoSrc: "/logos/smhs-logo.webp",
-    logoAlt: "SMHS logo",
-    logoClass: "w-14",
+    name: "Seedling Modern High School",
+    short: "SMHS",
     board: "CBSE",
-    grades: "Class I – XII",
+    tagline: "Where ambition finds its stream",
     photo: "/campus/feature-2.jpg",
-    description:
-      "Senior schooling with streams, board preparation and a first real career direction.",
-    facts: ["CBSE affiliated", "Science & Commerce streams", "Ghaziabad"],
     href: LINKS.smhs,
+    // Marigold, dark type — the bright card in the row
+    wash: "bg-marigold-500",
+    blend: "opacity-45",
+    text: "text-banyan-950",
+    meta: "text-banyan-950/70",
+    arrow: "text-banyan-900",
   },
   {
-    name: "Cambridge",
-    full: "Seedling International Academy",
-    logoSrc: "/logos/cambridge-shield.webp",
-    logoAlt: "Cambridge shield logo",
-    logoClass: "w-12",
+    name: "Seedling International Academy",
+    short: "Cambridge",
     board: "Cambridge",
-    grades: "Class I – XII",
+    tagline: "An international route, taught at home",
     photo: "/campus/sia-collage.webp",
-    description:
-      "An internationally benchmarked Cambridge pathway for families planning university abroad.",
-    facts: [
-      "Cambridge International",
-      "IGCSE & A Level pathway",
-      "Recognised in 50+ nations",
-    ],
     href: LINKS.cambridge,
+    // Harbour blue, nodding to the Cambridge shield
+    wash: "bg-harbour-800",
+    blend: "opacity-55",
+    text: "text-paper-50",
+    meta: "text-paper-100/75",
+    arrow: "text-marigold-400",
   },
 ] as const;
 
@@ -68,73 +64,48 @@ export default function SchoolsShowcase() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 lg:mt-16 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-3">
           {SCHOOLS.map((school) => (
             <a
-              key={school.name}
+              key={school.short}
               href={school.href}
               {...external}
-              className="group flex flex-col overflow-hidden rounded-2xl border border-banyan-800/12 bg-paper-50 transition-all hover:-translate-y-1 hover:border-banyan-700/30 hover:shadow-xl hover:shadow-banyan-900/8"
+              aria-label={`${school.name} — ${school.tagline}`}
+              className={`group relative flex aspect-square flex-col justify-between overflow-hidden rounded-xl p-7 ${school.wash} transition-transform duration-300 hover:-translate-y-1.5`}
             >
-              <div className="relative h-40 overflow-hidden bg-banyan-900">
-                <Image
-                  src={school.photo}
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 33vw, 100vw"
-                  className="object-cover opacity-65 transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute left-4 top-4 rounded-full bg-paper-50/95 px-3 py-1 text-[0.6875rem] font-bold uppercase tracking-[0.1em] text-banyan-800">
+              {/* Duotone: photograph reduced to luminance over the brand wash */}
+              <Image
+                src={school.photo}
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className={`object-cover mix-blend-luminosity ${school.blend} transition-transform duration-500 group-hover:scale-105`}
+              />
+
+              <div className="relative">
+                <p
+                  className={`text-[0.6875rem] font-bold uppercase tracking-[0.16em] ${school.meta}`}
+                >
                   {school.board}
-                </span>
-                <span className="absolute bottom-4 left-4 text-xs font-semibold uppercase tracking-[0.12em] text-paper-100/90">
-                  {school.grades}
-                </span>
+                </p>
+                <h3
+                  className={`mt-3 font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight ${school.text}`}
+                >
+                  {school.name}
+                </h3>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
-                <div
-                  className={`relative h-12 ${school.logoClass} shrink-0`}
+              <div className="relative flex items-end justify-between gap-4">
+                <p
+                  className={`max-w-[14rem] font-display text-[1.0625rem] leading-snug ${school.text}`}
                 >
-                  <Image
-                    src={school.logoSrc}
-                    alt={school.logoAlt}
-                    fill
-                    sizes="144px"
-                    className="object-contain object-left"
-                  />
-                </div>
-
-                <h3 className="mt-5 font-display text-xl font-semibold text-banyan-900">
-                  {school.full}
-                </h3>
-                <p className="mt-3 text-[0.9375rem] leading-relaxed text-ink-muted">
-                  {school.description}
+                  {school.tagline}
                 </p>
-
-                <ul className="mt-5 flex-1 space-y-2 border-t border-banyan-800/10 pt-5">
-                  {school.facts.map((fact) => (
-                    <li
-                      key={fact}
-                      className="flex items-start gap-2.5 text-[0.875rem] text-ink-muted"
-                    >
-                      <span
-                        aria-hidden="true"
-                        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-marigold-500"
-                      />
-                      {fact}
-                    </li>
-                  ))}
-                </ul>
-
-                <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-banyan-700">
-                  Visit {school.name}
-                  <span
-                    aria-hidden="true"
-                    className="transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
+                <span
+                  aria-hidden="true"
+                  className={`shrink-0 text-2xl leading-none ${school.arrow} transition-transform duration-300 group-hover:translate-x-1`}
+                >
+                  ↳
                 </span>
               </div>
             </a>

@@ -14,6 +14,10 @@
   --color-marigold-400: #f0b862;
   --color-marigold-300: #f7d197;
 
+  /* Deep harbour blue — the Cambridge shield's own register */
+  --color-harbour-800: #1d3b4d;
+  --color-harbour-700: #26506a;
+
   /* Paper — green-tinted off-white, not cream */
   --color-paper-50: #f7f9f6;
   --color-paper-100: #eef2ec;
