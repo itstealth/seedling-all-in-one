@@ -59,13 +59,13 @@ export default function AlumniSpotlight() {
               key={alum.name}
               className="overflow-hidden rounded-2xl border border-banyan-800/12 bg-paper-100"
             >
-              <div className="relative aspect-[4/3] bg-banyan-800/8">
+              <div className="relative aspect-[239/283] bg-banyan-800/8">
                 <Image
                   src={alum.photo}
                   alt={alum.name}
                   fill
                   sizes="(min-width: 640px) 33vw, 100vw"
-                  className="object-cover object-top"
+                  className="object-contain"
                 />
               </div>
               <figcaption className="p-5">

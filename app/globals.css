@@ -1,30 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  /* Banyan green — roots, growth, the 30-year institution */
-  --color-banyan-950: #071c15;
-  --color-banyan-900: #0d2b21;
-  --color-banyan-800: #10362b;
-  --color-banyan-700: #174d3c;
-  --color-banyan-600: #216b54;
-  --color-banyan-500: #2f8a6d;
+  /* Palette — text #193E4E · background #ffffff · primary #16537F · secondary #2B7483 · accent #81B3BA */
 
-  /* Marigold — celebration, assembly-day warmth */
-  --color-marigold-500: #e8a33d;
-  --color-marigold-400: #f0b862;
-  --color-marigold-300: #f7d197;
+  /* Blue-teal family (was banyan green) */
+  --color-banyan-950: #102e3c; /* deepest dark — director, footer, nav, hero gradient */
+  --color-banyan-900: #193e4e; /* text — hero bg, headings */
+  --color-banyan-800: #16537f; /* primary — CTAs, SPS card, wordmark */
+  --color-banyan-700: #4e8d9b; /* hover, inline highlight */
+  --color-banyan-600: #2b7483; /* secondary — eyebrows, board labels */
+  --color-banyan-500: #81b3ba; /* accent — spine gradient */
 
-  /* Deep harbour blue — the Cambridge shield's own register */
-  --color-harbour-800: #1d3b4d;
-  --color-harbour-700: #26506a;
+  /* Accent family (was marigold gold) */
+  --color-marigold-500: #81b3ba; /* accent — eyebrow dashes, bright card */
+  --color-marigold-400: #9ac6cd; /* lighter accent on dark */
+  --color-marigold-300: #b8d7dc; /* lightest accent on dark */
 
-  /* Paper — green-tinted off-white, not cream */
-  --color-paper-50: #f7f9f6;
-  --color-paper-100: #eef2ec;
-  --color-paper-200: #dde5da;
+  /* Deep card blue (was harbour) */
+  --color-harbour-800: #2b7483; /* secondary — SIA card */
+  --color-harbour-700: #1f5a69; /* deeper secondary */
 
-  --color-ink: #14201c;
-  --color-ink-muted: #4d5f58;
+  /* Paper — whites and near-whites */
+  --color-paper-50: #ffffff; /* background */
+  --color-paper-100: #f3f7f9; /* very light cool tint — alternate sections */
+  --color-paper-200: #ffffff; /* light text and borders on dark */
+
+  --color-ink: #193e4e; /* text */
+  --color-ink-muted: #5a6f7b; /* muted slate-teal */
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-karla);

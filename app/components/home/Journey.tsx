@@ -35,12 +35,12 @@ export default function Journey() {
   return (
     <section id="journey" className="bg-paper-100 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="max-w-2xl">
+        <div>
           <p className="eyebrow flex items-center gap-3 text-banyan-600">
             <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
             The through-line
           </p>
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-banyan-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold leading-snug tracking-tight text-banyan-900 sm:text-4xl lg:text-5xl">
             A child joins us at three. We are still here at eighteen.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-muted">
@@ -67,9 +67,9 @@ export default function Journey() {
               }`}
             >
               <span
-                className={`absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-marigold-500 bg-paper-100 lg:left-auto ${
+                className={`absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-marigold-500 bg-paper-100 ${
                   index % 2 === 0
-                    ? "lg:-right-[0.4375rem]"
+                    ? "lg:left-auto lg:-right-[0.4375rem]"
                     : "lg:-left-[0.4375rem]"
                 }`}
                 aria-hidden="true"

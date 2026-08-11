@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="mt-9 flex flex-wrap items-center gap-3">
           <a
             href="#journey"
-            className="rounded-full bg-marigold-500 px-6 py-3.5 text-sm font-semibold text-banyan-950 transition-colors hover:bg-marigold-400"
+            className="rounded-full bg-banyan-800 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-banyan-700"
           >
             Follow the journey
           </a>
