@@ -9,7 +9,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-banyan-900">
+    <section id="top" className="relative overflow-hidden bg-indigo-900">
       {/* Campus photograph, dimmed to let the type carry the page */}
       <div className="absolute inset-0">
         <Image
@@ -18,15 +18,15 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-25"
+          className="drift object-cover opacity-25"
         />
         <div
-          className="absolute inset-0 bg-gradient-to-b from-banyan-950/80 via-banyan-900/85 to-banyan-900"
+          className="absolute inset-0 bg-gradient-to-b from-indigo-950/80 via-indigo-900/85 to-indigo-900"
           aria-hidden="true"
         />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-28">
+      <div className="hero-seq relative mx-auto max-w-6xl px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-28">
         <p className="eyebrow flex items-center gap-3 text-marigold-400">
           <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
           Jaipur · Established 1992
@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="mt-9 flex flex-wrap items-center gap-3">
           <a
             href="#journey"
-            className="rounded-full bg-banyan-800 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-banyan-700"
+            className="rounded-full bg-indigo-800 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700"
           >
             Follow the journey
           </a>

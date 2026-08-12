@@ -3,25 +3,27 @@ import { LINKS, external } from "./links";
 
 export default function DirectorMessage() {
   return (
-    <section id="director" className="bg-banyan-950 py-20 lg:py-28">
+    <section id="director" className="bg-indigo-950 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="grid items-start gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-          <figure>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-banyan-900">
+        {/* The portrait column is the shorter of the two, so it centres against
+            the text rather than pinning to the top and leaving a hole beneath. */}
+        <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
+          <figure data-reveal data-reveal-bloom>
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full bg-indigo-900 ring-8 ring-marigold-500/30">
               <Image
-                src="/people/sandeep.png"
+                src="/people/sandeep-portrait.png"
                 alt="Dr. Sandeep Bakshi"
                 fill
-                sizes="(min-width: 1024px) 32vw, 100vw"
-                className="object-cover object-top"
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="object-cover"
               />
             </div>
-            <figcaption className="mt-5 text-sm text-paper-200/70">
+            <figcaption className="mt-6 text-center text-sm text-paper-200/70">
               CEO &amp; Director, Seedling Group of Institutions
             </figcaption>
           </figure>
 
-          <div>
+          <div data-reveal>
             <p className="eyebrow flex items-center gap-3 text-marigold-400">
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
               Director&rsquo;s communiqué
@@ -50,8 +52,8 @@ export default function DirectorMessage() {
               <p>
                 On the years after the pandemic, he writes of the chance
                 &ldquo;to begin to rewrite the narrative of school and to make
-                it more relevant to the realities of the world today&rdquo; —
-                a school where learning happens{" "}
+                it more relevant to the realities of the world today&rdquo; — a
+                school where learning happens{" "}
                 <span className="text-paper-100">
                   not out of a text book or worksheet, but through contextual
                   and real life problem solving

@@ -5,6 +5,7 @@ import Journey from './components/home/Journey'
 import DirectorMessage from './components/home/DirectorMessage'
 import Principal from './components/home/Principal'
 import AlumniSpotlight from './components/home/AlumniSpotlight'
+import Admissions from './components/home/Admissions'
 import Footer from './components/home/Footer'
 
 export default function Page() {
@@ -24,6 +25,8 @@ export default function Page() {
         <Principal />
         {/* Alumni */}
         <AlumniSpotlight />
+        {/* Where to actually apply */}
+        <Admissions />
       </main>
       <Footer />
     </>

@@ -24,6 +24,7 @@ test('renders the brief’s sections in order', () => {
     'Dr. Sandeep Bakshi',
     'Dr. Preeti Bakshi',
     'The Pride of Seedling',
+    'Every route starts with a conversation.',
   ])
 })
 

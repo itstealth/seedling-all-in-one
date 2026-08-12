@@ -35,12 +35,12 @@ export default function Journey() {
   return (
     <section id="journey" className="bg-paper-100 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div>
-          <p className="eyebrow flex items-center gap-3 text-banyan-600">
+        <div data-reveal>
+          <p className="eyebrow flex items-center gap-3 text-indigo-700">
             <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
             The through-line
           </p>
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-snug tracking-tight text-banyan-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold leading-snug tracking-tight text-indigo-900 sm:text-4xl lg:text-5xl">
             A child joins us at three. We are still here at eighteen.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-muted">
@@ -51,9 +51,9 @@ export default function Journey() {
         </div>
 
         {/* The spine: a continuous line the stages hang from */}
-        <ol className="relative mt-14 lg:mt-20">
+        <ol className="relative mt-14 lg:mt-20" data-reveal-group>
           <div
-            className="spine-line absolute left-[0.4375rem] top-2 h-[calc(100%-2rem)] w-px bg-gradient-to-b from-marigold-500 via-banyan-500 to-banyan-800/20 lg:left-1/2"
+            className="spine-line absolute left-[0.4375rem] top-2 h-[calc(100%-2rem)] w-px bg-gradient-to-b from-marigold-500 via-indigo-500 to-indigo-800/20 lg:left-1/2"
             aria-hidden="true"
           />
 
@@ -75,13 +75,13 @@ export default function Journey() {
                 aria-hidden="true"
               />
 
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-banyan-600">
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-indigo-700">
                 {item.stage}
               </p>
-              <h3 className="mt-2 font-display text-xl font-semibold text-banyan-900 lg:text-2xl">
+              <h3 className="mt-2 font-display text-xl font-semibold text-indigo-900 lg:text-2xl">
                 {item.name}
               </h3>
-              <p className="mt-1.5 inline-block rounded-full bg-banyan-800/8 px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-banyan-700">
+              <p className="mt-1.5 inline-block rounded-full bg-indigo-800/8 px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-indigo-700">
                 {item.board}
               </p>
               <p className="mt-3 max-w-sm text-[0.9375rem] leading-relaxed text-ink-muted lg:inline-block">

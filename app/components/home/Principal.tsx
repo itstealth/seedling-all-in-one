@@ -10,13 +10,13 @@ export default function Principal() {
     <section id="principal" className="bg-paper-100 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-          <div className="order-2 lg:order-1">
-            <p className="eyebrow flex items-center gap-3 text-banyan-600">
+          <div className="order-2 lg:order-1" data-reveal>
+            <p className="eyebrow flex items-center gap-3 text-indigo-700">
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
               Executive Director
             </p>
 
-            <h2 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-tight text-banyan-900 sm:text-4xl">
+            <h2 className="mt-6 font-display text-3xl font-semibold leading-tight tracking-tight text-indigo-900 sm:text-4xl">
               Dr. Preeti Bakshi
             </h2>
 
@@ -25,29 +25,29 @@ export default function Principal() {
             </p>
 
             <blockquote className="mt-8 border-l-2 border-marigold-500 pl-6">
-              <p className="font-display text-xl leading-snug text-banyan-900">
+              <p className="font-display text-xl leading-snug text-indigo-900">
                 “Give the pupils something to do, not something to learn; and
                 the doing is of such a nature as to demand thinking; learning
                 naturally results.”
               </p>
               <cite className="mt-3 block text-sm not-italic text-ink-muted">
                 John Dewey — the principle behind{" "}
-                <span className="font-semibold text-banyan-700">
+                <span className="font-semibold text-indigo-700">
                   Creating Fresh Pathways
                 </span>
               </cite>
             </blockquote>
 
-            <dl className="mt-9 divide-y divide-banyan-800/12 border-y border-banyan-800/12">
+            <dl className="mt-9 divide-y divide-indigo-800/12 border-y border-indigo-800/12">
               {OVERSEES.map((item) => (
                 <div
                   key={item.school}
                   className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1 py-4"
                 >
-                  <dt className="font-display text-base font-semibold text-banyan-900">
+                  <dt className="font-display text-base font-semibold text-indigo-900">
                     {item.school}
                   </dt>
-                  <dd className="text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-banyan-600">
+                  <dd className="text-[0.8125rem] font-semibold uppercase tracking-[0.1em] text-indigo-700">
                     {item.board}
                   </dd>
                 </div>
@@ -61,14 +61,14 @@ export default function Principal() {
             </p>
           </div>
 
-          <figure className="order-1 lg:order-2">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-banyan-800/8">
+          <figure className="order-1 lg:order-2" data-reveal data-reveal-bloom>
+            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full bg-indigo-800/8 ring-8 ring-marigold-500/25">
               <Image
-                src="/people/preeti.png"
+                src="/people/preeti-portrait.png"
                 alt="Dr. Preeti Bakshi"
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"
-                className="object-cover object-top"
+                className="object-cover"
               />
             </div>
           </figure>

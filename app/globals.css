@@ -1,32 +1,34 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — text #193E4E · background #ffffff · primary #16537F · secondary #2B7483 · accent #81B3BA */
+  /* Indigo carries the authority, marigold the warmth, sandstone the ground.
+     Indigo and marigold sit opposite one another on the wheel, so an accent
+     actually separates from its background instead of tinting it — the whole
+     point of an accent, and what a single-hue palette cannot do. */
 
-  /* Blue-teal family (was banyan green) */
-  --color-banyan-950: #102e3c; /* deepest dark — director, footer, nav, hero gradient */
-  --color-banyan-900: #193e4e; /* text — hero bg, headings */
-  --color-banyan-800: #16537f; /* primary — CTAs, SPS card, wordmark */
-  --color-banyan-700: #4e8d9b; /* hover, inline highlight */
-  --color-banyan-600: #2b7483; /* secondary — eyebrows, board labels */
-  --color-banyan-500: #81b3ba; /* accent — spine gradient */
+  /* Indigo — primary. Darkens as the number rises. */
+  --color-indigo-500: #8194c4; /* lightest — spine gradient */
+  --color-indigo-700: #3b5498; /* eyebrows, board labels, hover */
+  --color-indigo-800: #24386b; /* primary — CTAs, wordmark, SPS card */
+  --color-indigo-900: #1a2847; /* headings, hero ground */
+  --color-indigo-950: #101b33; /* deepest — director band, footer, nav rail */
 
-  /* Accent family (was marigold gold) */
-  --color-marigold-500: #81b3ba; /* accent — eyebrow dashes, bright card */
-  --color-marigold-400: #9ac6cd; /* lighter accent on dark */
-  --color-marigold-300: #b8d7dc; /* lightest accent on dark */
+  /* Marigold — accent. Warm enough to survive on both grounds. */
+  --color-marigold-500: #e8a33d; /* accent on light, and the bright card */
+  --color-marigold-400: #f2bc6b; /* accent on dark */
+  --color-marigold-300: #f7d5a0; /* softest on dark */
 
-  /* Deep card blue (was harbour) */
-  --color-harbour-800: #2b7483; /* secondary — SIA card */
-  --color-harbour-700: #1f5a69; /* deeper secondary */
+  /* Teal — reserved for the Cambridge arm, so it reads as its own thing */
+  --color-teal-800: #145a6b;
+  --color-teal-700: #0f4553;
 
-  /* Paper — whites and near-whites */
-  --color-paper-50: #ffffff; /* background */
-  --color-paper-100: #f3f7f9; /* very light cool tint — alternate sections */
-  --color-paper-200: #ffffff; /* light text and borders on dark */
+  /* Paper — warm neutrals, not white. Sandstone under a Jaipur sun. */
+  --color-paper-50: #fdfbf7; /* page ground */
+  --color-paper-100: #f3ede3; /* alternate sections */
+  --color-paper-200: #f7f4ee; /* text and borders on dark */
 
-  --color-ink: #193e4e; /* text */
-  --color-ink-muted: #5a6f7b; /* muted slate-teal */
+  --color-ink: #1a2847; /* body text */
+  --color-ink-muted: #6b6459; /* warm grey — 5.2:1 on paper-50 */
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-karla);
@@ -73,6 +75,122 @@
     letter-spacing: 0.18em;
     text-transform: uppercase;
   }
+
+  /* Jaali — the pierced stone lattice of Jaipur's older buildings, reduced to
+     its underlying grid of overlapping circles. Painted as a mask rather than
+     a coloured image, so the lattice simply takes the element's own text
+     colour and can sit on any ground. */
+  .jaali {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .jaali::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-color: currentColor;
+    opacity: 0.08;
+    --jaali-tile: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='64'%20height='64'%3E%3Cg%20fill='none'%20stroke='%23000'%20stroke-width='1.25'%3E%3Ccircle%20cx='0'%20cy='0'%20r='32'/%3E%3Ccircle%20cx='64'%20cy='0'%20r='32'/%3E%3Ccircle%20cx='0'%20cy='64'%20r='32'/%3E%3Ccircle%20cx='64'%20cy='64'%20r='32'/%3E%3Ccircle%20cx='32'%20cy='32'%20r='32'/%3E%3C/g%3E%3C/svg%3E");
+    -webkit-mask-image: var(--jaali-tile);
+    mask-image: var(--jaali-tile);
+    -webkit-mask-size: 64px 64px;
+    mask-size: 64px 64px;
+  }
+}
+
+/* ——— Motion ————————————————————————————————————————————————————
+   Scroll is the timeline, in the same idiom as .spine-line below. Nothing runs
+   on the main thread and no JavaScript ships for any of it.
+
+   The fallback is the useful part: a browser without scroll-driven animation
+   drops the animation-timeline declaration, so each animation runs once on the
+   document timeline at load instead. Either way every element finishes at its
+   visible state — the motion is decoration, never the thing that reveals
+   content. */
+
+/* Reveals are transitions, not scroll-linked animations, so each one plays out
+   over a real duration no matter how fast the page was scrolled. The hidden
+   start state is gated behind .js-reveal, which Reveal.tsx sets at runtime —
+   without it the page renders fully visible, so a failed script can never
+   leave content stranded at opacity 0. */
+/* Decorative children are skipped throughout: the journey spine is an
+   absolutely positioned rule that animates itself, and translating it with the
+   stages would drag it out of place. */
+.js-reveal [data-reveal],
+.js-reveal [data-reveal-group] > *:not([aria-hidden="true"]) {
+  opacity: 0;
+  transform: translateY(2.5rem);
+}
+
+.js-reveal [data-reveal-bloom] {
+  transform: scale(0.9);
+}
+
+.js-reveal [data-reveal].is-visible,
+.js-reveal [data-reveal-group].is-visible > *:not([aria-hidden="true"]) {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal],
+[data-reveal-group] > *:not([aria-hidden="true"]) {
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Children arrive one after another rather than as a block. */
+[data-reveal-group] > *:nth-child(2) {
+  transition-delay: 0.14s;
+}
+
+[data-reveal-group] > *:nth-child(3) {
+  transition-delay: 0.28s;
+}
+
+[data-reveal-group] > *:nth-child(n + 4) {
+  transition-delay: 0.42s;
+}
+
+/* The hero photograph drifts a little slower than the page it sits behind.
+   Held at a slight scale so the edges never come into frame. */
+@keyframes drift {
+  from {
+    transform: scale(1.1) translateY(-2%);
+  }
+  to {
+    transform: scale(1.1) translateY(3%);
+  }
+}
+
+.drift {
+  animation: drift linear both;
+  animation-timeline: view();
+  animation-range: cover;
+}
+
+/* Above the fold there is no scroll to drive anything, so the hero opens on
+   the clock instead — one short sequence, then it is done. */
+.hero-seq > * {
+  animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-seq > *:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.hero-seq > *:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.hero-seq > *:nth-child(3) {
+  animation-delay: 0.26s;
+}
+.hero-seq > *:nth-child(4) {
+  animation-delay: 0.36s;
+}
+.hero-seq > *:nth-child(5) {
+  animation-delay: 0.46s;
 }
 
 /* The journey spine draws itself in as the section enters view */
@@ -100,5 +218,20 @@
   .spine-line {
     animation: none;
     transform: scaleY(1);
+  }
+
+  /* Everything lands on its finished state immediately. */
+  .drift,
+  .hero-seq > * {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  [data-reveal],
+  [data-reveal-group] > * {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 }

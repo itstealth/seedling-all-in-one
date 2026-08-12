@@ -14,7 +14,7 @@ const GROUP_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-banyan-950 py-16 text-paper-200 lg:py-20">
+    <footer className="jaali mt-auto overflow-hidden bg-indigo-950 py-16 text-paper-200 lg:py-20">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
           <div className="max-w-sm">

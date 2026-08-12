@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Karla, Tiro_Devanagari_Sanskrit } from "next/font/google";
+import Reveal from "./components/Reveal";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${karla.variable} ${tiro.variable} h-full`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <Reveal />
+      </body>
     </html>
   );
 }
