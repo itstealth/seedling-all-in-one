@@ -24,6 +24,12 @@ const STAGES = [
     note: "An internationally benchmarked route for families planning study abroad.",
   },
   {
+    stage: "Class I – XII",
+    name: "Seedling Modern International Academy",
+    board: "Cambridge",
+    note: "A second Cambridge campus in Durgapura, extending the international route.",
+  },
+  {
     stage: "Beyond school",
     name: "University, and what follows",
     board: "50+ nations",

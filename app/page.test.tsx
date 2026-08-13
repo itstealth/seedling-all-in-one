@@ -19,12 +19,12 @@ test('renders the brief’s sections in order', () => {
     .map((heading) => heading.textContent)
 
   expect(sections).toEqual([
-    'Three campuses, two boards, one standard.',
+    'Four campuses, two boards, one standard.',
     'A child joins us at three. We are still here at eighteen.',
     'Dr. Sandeep Bakshi',
     'Dr. Preeti Bakshi',
     'The Pride of Seedling',
-    'Every route starts with a conversation.',
+    'Not sure which campus fits?',
   ])
 })
 

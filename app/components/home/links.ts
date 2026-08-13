@@ -1,3 +1,10 @@
+/**
+ * Formspree endpoint for the hero enquiry form. Create a free form at
+ * https://formspree.io, then replace YOUR_FORM_ID below with the ID it gives
+ * you — that is the only change needed to make submissions arrive for real.
+ */
+export const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+
 /** Single source of truth for outbound destinations. */
 export const LINKS = {
   sps: "https://sps.seedlingschools.com",

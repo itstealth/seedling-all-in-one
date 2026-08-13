@@ -23,7 +23,7 @@ const ROUTES = [
 
 export default function Admissions() {
   return (
-    <section id="admissions" className="py-20 lg:py-28">
+    <section id="admissions" className="pt-4 pb-12 lg:pt-6 lg:pb-16">
       {/* Marigold is the page's accent, so it is held to a panel rather than a
           full-bleed band — at that size it would stop reading as an accent and
           start competing with everything above it. */}

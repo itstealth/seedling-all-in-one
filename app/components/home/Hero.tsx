@@ -26,54 +26,52 @@ export default function Hero() {
         />
       </div>
 
-      <div className="hero-seq relative mx-auto max-w-6xl px-5 pb-16 pt-20 lg:px-8 lg:pb-24 lg:pt-28">
-        <p className="eyebrow flex items-center gap-3 text-marigold-400">
-          <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
-          Jaipur · Established 1992
-        </p>
+      <div className="relative mx-auto max-w-5xl px-5 py-16 text-center lg:px-8 lg:py-24">
+        <div className="hero-seq mx-auto flex flex-col items-center">
+          <p className="eyebrow flex items-center gap-3 text-marigold-400">
+            <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+            Jaipur · Established 1992
+            <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+          </p>
 
-        <h1 className="mt-6 max-w-4xl font-display text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-paper-50 sm:text-6xl lg:text-7xl">
-          The Journey From Nursery
-          <br className="hidden sm:block" />{" "}
-          <span className="text-marigold-400">to University</span>
-        </h1>
+          <h1 className="mt-6 font-display text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-paper-50 sm:text-5xl lg:text-6xl">
+            The Journey From Nursery
+            <br />{" "}
+            <span className="text-marigold-400">to University</span>
+          </h1>
 
-        <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper-200">
-          One group, five institutions, and a single unbroken path — play group
-          through Class XII, on CBSE and Cambridge, and out into the world.
-        </p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper-200">
+            One group, five institutions, and a single unbroken path — from
+            playgroup through Class XII, across CBSE and Cambridge, and out
+            into the world.
+          </p>
 
-        <div className="mt-9 flex flex-wrap items-center gap-3">
-          <a
-            href="#journey"
-            className="rounded-full bg-indigo-800 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700"
-          >
-            Follow the journey
-          </a>
-          <a
-            href="#schools"
-            className="rounded-full border border-paper-200/30 px-6 py-3.5 text-sm font-semibold text-paper-100 transition-colors hover:border-paper-200/60 hover:bg-paper-50/5"
-          >
-            Find the right school
-          </a>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href="#schools"
+              className="rounded-full bg-indigo-800 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700"
+            >
+              Find the right school
+            </a>
+          </div>
+
+          {/* Provenance figures, set as data rather than decoration. */}
+          <dl className="mt-12 grid w-full max-w-3xl grid-cols-2 gap-x-6 gap-y-8 border-t border-paper-200/15 pt-8 sm:grid-cols-4">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="mx-auto max-w-[9rem]">
+                <dt className="sr-only">{stat.label}</dt>
+                <dd>
+                  <span className="block font-display text-3xl font-semibold text-paper-50 lg:text-4xl">
+                    {stat.figure}
+                  </span>
+                  <span className="mt-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-paper-200/70">
+                    {stat.label}
+                  </span>
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
-
-        {/* Provenance figures, set as data rather than decoration */}
-        <dl className="mt-16 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-paper-200/15 pt-9 sm:grid-cols-4">
-          {STATS.map((stat) => (
-            <div key={stat.label}>
-              <dt className="sr-only">{stat.label}</dt>
-              <dd>
-                <span className="block font-display text-3xl font-semibold text-paper-50 lg:text-4xl">
-                  {stat.figure}
-                </span>
-                <span className="mt-1.5 block text-xs font-medium uppercase tracking-[0.12em] text-paper-200/70">
-                  {stat.label}
-                </span>
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

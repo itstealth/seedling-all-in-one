@@ -11,7 +11,15 @@ test("the group switcher links to every school by name", () => {
     screen.getByRole("link", { name: "Seedling Modern High School" }),
   ).toHaveAttribute("href", "https://smhs.seedlingschools.com");
   expect(
-    screen.getByRole("link", { name: "Cambridge shield" }),
+    screen.getByRole("link", { name: "Seedling International Academy" }),
+  ).toHaveAttribute(
+    "href",
+    "https://seedling-international-academy.vercel.app",
+  );
+  expect(
+    screen.getByRole("link", {
+      name: "Seedling Modern International Academy",
+    }),
   ).toHaveAttribute(
     "href",
     "https://seedling-international-academy.vercel.app",
@@ -25,7 +33,8 @@ test("the group switcher shows each school logo", () => {
   );
   expect(logos.some((src) => src.includes("sps-logo"))).toBe(true);
   expect(logos.some((src) => src.includes("smhs-logo"))).toBe(true);
-  expect(logos.some((src) => src.includes("cambridge-shield"))).toBe(true);
+  expect(logos.some((src) => src.includes("sia-logo-dark"))).toBe(true);
+  expect(logos.some((src) => src.includes("smia-logo-dark"))).toBe(true);
 });
 
 test("links to the alumni page", () => {
@@ -45,8 +54,8 @@ test("outbound links carry noopener noreferrer", () => {
   const outbound = screen
     .getAllByRole("link")
     .filter((link) => link.getAttribute("href")?.startsWith("http"));
-  // Three school tabs, plus Alumni in both the desktop bar and the mobile menu.
-  expect(outbound).toHaveLength(5);
+  // Four school tabs, plus Alumni in both the desktop bar and the mobile menu.
+  expect(outbound).toHaveLength(6);
   for (const link of outbound) {
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
@@ -63,7 +72,6 @@ test("links to each on-page section", () => {
   expect(href(/the journey/i)).toContain("#journey");
   expect(href(/our schools/i)).toContain("#schools");
   expect(href(/leadership/i)).toContain("#director");
-  expect(href(/^admissions$/i)).toContain("#admissions");
   expect(
     screen.getByRole("link", { name: /choose a school/i }),
   ).toHaveAttribute("href", "#schools");

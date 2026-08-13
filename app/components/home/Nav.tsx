@@ -17,11 +17,18 @@ const SCHOOL_TABS = [
     width: "w-8",
   },
   {
-    label: "Cambridge",
+    label: "SIA",
     href: LINKS.cambridge,
-    logo: "/logos/cambridge-shield.webp",
-    alt: "Cambridge shield",
-    width: "w-7",
+    logo: "/logos/sia-logo-dark.png",
+    alt: "Seedling International Academy",
+    width: "w-24",
+  },
+  {
+    label: "SMIA",
+    href: LINKS.cambridge,
+    logo: "/logos/smia-logo-dark.webp",
+    alt: "Seedling Modern International Academy",
+    width: "w-28",
   },
 ];
 
@@ -29,15 +36,16 @@ const SECTIONS = [
   { label: "Our Schools", href: "#schools" },
   { label: "The Journey", href: "#journey" },
   { label: "Leadership", href: "#director" },
-  { label: "Admissions", href: "#admissions" },
 ];
 
 export default function Nav() {
   return (
     <header className="sticky top-0 z-50">
-      {/* Group switcher — every school in the group, always one click away */}
+      {/* Group switcher — every school in the group, always one click away.
+          Four logos are wider than three were, so on narrow screens this
+          scrolls horizontally rather than clipping the first tab off-screen. */}
       <div className="border-b border-paper-200/10 bg-indigo-950">
-        <div className="mx-auto flex max-w-6xl items-stretch justify-end px-5 lg:px-8">
+        <div className="mx-auto flex max-w-6xl items-stretch overflow-x-auto px-5 lg:justify-end lg:overflow-visible lg:px-8">
           {SCHOOL_TABS.map((school) => (
             <a
               key={school.label}
@@ -57,12 +65,6 @@ export default function Nav() {
                   sizes="80px"
                   className="object-contain"
                 />
-              </span>
-              <span
-                aria-hidden="true"
-                className="hidden text-xs font-semibold uppercase tracking-[0.1em] text-paper-200/70 transition-colors group-hover:text-marigold-400 sm:inline"
-              >
-                {school.label}
               </span>
             </a>
           ))}

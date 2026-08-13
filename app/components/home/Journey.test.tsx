@@ -10,6 +10,7 @@ test("renders every stage of the journey in order", () => {
     "Seedling Public School",
     "Seedling Modern High School",
     "Seedling International Academy",
+    "Seedling Modern International Academy",
     "University, and what follows",
   ]);
 });
@@ -17,5 +18,5 @@ test("renders every stage of the journey in order", () => {
 test("presents the stages as an ordered list", () => {
   render(<Journey />);
   expect(screen.getByRole("list")).toBeInTheDocument();
-  expect(screen.getAllByRole("listitem")).toHaveLength(5);
+  expect(screen.getAllByRole("listitem")).toHaveLength(6);
 });
