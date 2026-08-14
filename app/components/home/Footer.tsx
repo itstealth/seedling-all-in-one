@@ -28,7 +28,7 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Our schools">
-            <p className="eyebrow text-marigold-400">Our schools</p>
+            <p className="eyebrow text-paper-100">Our schools</p>
             <ul className="mt-5 space-y-3.5">
               {SCHOOL_LINKS.map((link) => (
                 <li key={link.label}>
@@ -36,7 +36,7 @@ export default function Footer() {
                     href={link.href}
                     {...external}
                     aria-label={`${link.label} (${link.note})`}
-                    className="inline-flex items-baseline gap-2 text-[0.9375rem] font-medium text-paper-100 transition-colors hover:text-marigold-400"
+                    className="inline-flex items-baseline gap-2 text-[0.9375rem] font-medium text-paper-100 transition-colors hover:text-paper-50"
                   >
                     {link.label}
                     <span
@@ -52,14 +52,14 @@ export default function Footer() {
           </nav>
 
           <nav aria-label="The group">
-            <p className="eyebrow text-marigold-400">The group</p>
+            <p className="eyebrow text-paper-100">The group</p>
             <ul className="mt-5 space-y-3.5">
               {GROUP_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
                     {...external}
-                    className="text-[0.9375rem] font-medium text-paper-100 transition-colors hover:text-marigold-400"
+                    className="text-[0.9375rem] font-medium text-paper-100 transition-colors hover:text-paper-50"
                   >
                     {link.label}
                   </a>

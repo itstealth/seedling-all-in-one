@@ -8,14 +8,14 @@ export default function GroupCta() {
           photography above it. */}
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div
-          className="jaali flex flex-wrap items-center justify-between gap-6 overflow-hidden rounded-3xl bg-marigold-500 px-7 py-10 text-indigo-950 sm:px-12 lg:px-14"
+          className="jaali flex flex-wrap items-center justify-between gap-6 overflow-hidden rounded-3xl bg-marigold-500 px-7 py-10 text-paper-50 sm:px-12 lg:px-14"
           data-reveal
         >
           <div className="max-w-xl">
-            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-indigo-950 sm:text-3xl">
+            <h2 className="font-display text-2xl font-semibold leading-tight tracking-tight text-paper-50 sm:text-3xl">
               Not sure which campus fits?
             </h2>
-            <p className="mt-2.5 text-[1.0625rem] leading-relaxed text-indigo-900">
+            <p className="mt-2.5 text-[1.0625rem] leading-relaxed text-paper-100">
               Tell us about your child and we will point you to the right team.
             </p>
           </div>

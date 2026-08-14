@@ -9,7 +9,7 @@ export default function DirectorMessage() {
             the text rather than pinning to the top and leaving a hole beneath. */}
         <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <figure data-reveal data-reveal-bloom>
-            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full bg-indigo-900 ring-8 ring-marigold-500/30">
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full bg-indigo-900 ring-8 ring-paper-100/30">
               <Image
                 src="/people/sandeep-portrait.png"
                 alt="Dr. Sandeep Bakshi"
@@ -24,8 +24,8 @@ export default function DirectorMessage() {
           </figure>
 
           <div data-reveal>
-            <p className="eyebrow flex items-center gap-3 text-marigold-400">
-              <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+            <p className="eyebrow flex items-center gap-3 text-paper-100">
+              <span className="h-px w-8 bg-paper-100" aria-hidden="true" />
               Director&rsquo;s communiqué
             </p>
 
@@ -60,7 +60,7 @@ export default function DirectorMessage() {
                 </span>
                 .
               </p>
-              <p className="font-display text-lg font-medium text-marigold-300">
+              <p className="font-display text-lg font-medium text-paper-50">
                 “From Play Group to University — your child, in our care, is
                 promised a world of opportunities, memories and milestones.”
               </p>
@@ -69,7 +69,7 @@ export default function DirectorMessage() {
             <a
               href={LINKS.about}
               {...external}
-              className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-marigold-400 transition-colors hover:text-marigold-300"
+              className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-paper-100 transition-colors hover:text-paper-50"
             >
               Read the full communiqué
               <span

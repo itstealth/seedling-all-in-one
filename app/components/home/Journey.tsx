@@ -39,10 +39,10 @@ const STAGES = [
 
 export default function Journey() {
   return (
-    <section id="journey" className="bg-paper-100 py-20 lg:py-28">
+    <section id="journey" className="bg-paper-50 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div data-reveal>
-          <p className="eyebrow flex items-center gap-3 text-indigo-700">
+          <p className="eyebrow flex items-center gap-3 text-marigold-500">
             <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
             The through-line
           </p>
@@ -73,7 +73,7 @@ export default function Journey() {
               }`}
             >
               <span
-                className={`absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-marigold-500 bg-paper-100 ${
+                className={`absolute left-0 top-1.5 flex h-3.5 w-3.5 items-center justify-center rounded-full border-2 border-marigold-500 bg-paper-50 ${
                   index % 2 === 0
                     ? "lg:left-auto lg:-right-[0.4375rem]"
                     : "lg:-left-[0.4375rem]"

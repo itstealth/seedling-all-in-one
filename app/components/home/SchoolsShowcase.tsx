@@ -38,7 +38,7 @@ export default function SchoolsShowcase() {
     <section id="schools" className="py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div data-reveal>
-          <p className="eyebrow flex items-center gap-3 text-indigo-700">
+          <p className="eyebrow flex items-center gap-3 text-marigold-500">
             <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
             Choose your board
           </p>
@@ -91,11 +91,15 @@ export default function SchoolsShowcase() {
                 />
                 <div
                   aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-t from-indigo-950 via-indigo-950/60 to-transparent"
+                  className={`absolute inset-0 bg-gradient-to-t to-transparent ${
+                    school.board === "Cambridge"
+                      ? "from-marigold-500 via-marigold-500/60"
+                      : "from-indigo-950 via-indigo-950/60"
+                  }`}
                 />
 
                 <div className="relative p-6">
-                  <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-marigold-400">
+                  <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-paper-100">
                     {school.board}
                   </p>
                   <h3 className="mt-2 font-display text-lg font-medium leading-snug tracking-tight text-paper-50">

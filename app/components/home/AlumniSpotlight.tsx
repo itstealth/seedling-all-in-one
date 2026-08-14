@@ -25,7 +25,7 @@ export default function AlumniSpotlight() {
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="flex flex-wrap items-end justify-between gap-6" data-reveal>
           <div className="max-w-2xl">
-            <p className="eyebrow flex items-center gap-3 text-indigo-700">
+            <p className="eyebrow flex items-center gap-3 text-marigold-500">
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
               Community · Connection · Collaboration
             </p>
@@ -57,9 +57,9 @@ export default function AlumniSpotlight() {
           {ALUMNI.map((alum) => (
             <figure
               key={alum.name}
-              className="rounded-2xl border border-indigo-800/10 bg-paper-100 p-8 text-center"
+              className="rounded-2xl border border-indigo-800/10 bg-paper-50 p-8 text-center shadow-sm"
             >
-              <div className="relative mx-auto aspect-square w-32 overflow-hidden rounded-full bg-indigo-800/8 ring-4 ring-marigold-500/30">
+              <div className="relative mx-auto aspect-square w-32 overflow-hidden rounded-full bg-indigo-800/8 ring-4 ring-marigold-500">
                 <Image
                   src={alum.photo}
                   alt={alum.name}

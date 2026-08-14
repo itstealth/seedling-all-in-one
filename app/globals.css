@@ -1,34 +1,43 @@
 @import "tailwindcss";
 
 @theme {
-  /* Indigo carries the authority, marigold the warmth, sandstone the ground.
-     Indigo and marigold sit opposite one another on the wheel, so an accent
-     actually separates from its background instead of tinting it — the whole
-     point of an accent, and what a single-hue palette cannot do. */
+  /* Palette pinned to sps.seedlingschools.com's own brand colors, per the
+     client's request — every value below traces back to a hex the SPS site
+     itself ships (navy, crimson, mauve, sand, off-white). Where the old
+     five-stop indigo/marigold scale needed a shade SPS doesn't define
+     outright, it's a color-mix() of two SPS hexes rather than an invented
+     color, so the palette still reads as "the same colors as SPS." Variable
+     names are kept as indigo/marigold/teal/paper/ink so no component needed
+     touching — only the values moved. */
 
-  /* Indigo — primary. Darkens as the number rises. */
-  --color-indigo-500: #8194c4; /* lightest — spine gradient */
-  --color-indigo-700: #3b5498; /* eyebrows, board labels, hover */
-  --color-indigo-800: #24386b; /* primary — CTAs, wordmark, SPS card */
-  --color-indigo-900: #1a2847; /* headings, hero ground */
-  --color-indigo-950: #101b33; /* deepest — director band, footer, nav rail */
+  /* Indigo slot → SPS navy. Darkens as the number rises. SPS itself only ships
+     two blues (navy / navy-dark), confirmed by sampling pixels straight off
+     sps.seedlingschools.com: the "Excellence" emphasis text is #034ea2, the
+     "Nurturing" heading and the full-bleed nav rail are both #013975 — so 900
+     and 950 reuse navy-dark exactly rather than mixing it darker still. */
+  --color-indigo-500: color-mix(in srgb, #034ea2 45%, white); /* lightest — spine gradient (decorative, no SPS equivalent) */
+  --color-indigo-700: #034ea2; /* SPS navy — eyebrows, board labels, hover */
+  --color-indigo-800: #034ea2; /* SPS navy — primary CTAs, wordmark, SPS card */
+  --color-indigo-900: #013975; /* SPS navy-dark — headings, hero ground */
+  --color-indigo-950: #013975; /* SPS navy-dark — deepest, director band, footer, nav rail */
 
-  /* Marigold — accent. Warm enough to survive on both grounds. */
-  --color-marigold-500: #e8a33d; /* accent on light, and the bright card */
-  --color-marigold-400: #f2bc6b; /* accent on dark */
-  --color-marigold-300: #f7d5a0; /* softest on dark */
+  /* Marigold slot → SPS crimson family. crimson-dark/-deeper are SPS's own
+     darker stops, reused here instead of inventing lighter tints. */
+  --color-marigold-500: #a3123f; /* SPS crimson — accent on light, and the bright card */
+  --color-marigold-400: #8e1037; /* SPS crimson-dark — accent on dark */
+  --color-marigold-300: #7a0f35; /* SPS crimson-deeper — softest on dark */
 
-  /* Teal — reserved for the Cambridge arm, so it reads as its own thing */
-  --color-teal-800: #145a6b;
-  --color-teal-700: #0f4553;
+  /* Teal slot → SPS mauve, reserved for the Cambridge arm so it reads as its own thing */
+  --color-teal-800: #896b85; /* SPS mauve */
+  --color-teal-700: color-mix(in srgb, #896b85 85%, black);
 
-  /* Paper — warm neutrals, not white. Sandstone under a Jaipur sun. */
-  --color-paper-50: #fdfbf7; /* page ground */
-  --color-paper-100: #f3ede3; /* alternate sections */
-  --color-paper-200: #f7f4ee; /* text and borders on dark */
+  /* Paper slot → SPS off-white and sand. */
+  --color-paper-50: #ffffff; /* SPS off-white — page ground */
+  --color-paper-100: #d6d1cf; /* SPS sand — alternate sections */
+  --color-paper-200: #f0f4ff; /* SPS cool-white — text and borders on dark */
 
-  --color-ink: #1a2847; /* body text */
-  --color-ink-muted: #6b6459; /* warm grey — 5.2:1 on paper-50 */
+  --color-ink: #2c2c2c; /* SPS text-base — body text */
+  --color-ink-muted: #5a5a5a; /* SPS text-light */
 
   --font-display: var(--font-fraunces);
   --font-body: var(--font-karla);

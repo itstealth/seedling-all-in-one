@@ -28,16 +28,16 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-5xl px-5 py-16 text-center lg:px-8 lg:py-24">
         <div className="hero-seq mx-auto flex flex-col items-center">
-          <p className="eyebrow flex items-center gap-3 text-marigold-400">
-            <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+          <p className="eyebrow flex items-center gap-3 text-paper-100">
+            <span className="h-px w-8 bg-paper-100" aria-hidden="true" />
             Jaipur · Established 1992
-            <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
+            <span className="h-px w-8 bg-paper-100" aria-hidden="true" />
           </p>
 
           <h1 className="mt-6 font-display text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-paper-50 sm:text-5xl lg:text-6xl">
             The Journey From Nursery
             <br />{" "}
-            <span className="text-marigold-400">to University</span>
+            <span className="italic text-paper-100">to University</span>
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-paper-200">

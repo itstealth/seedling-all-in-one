@@ -7,11 +7,11 @@ const OVERSEES = [
 
 export default function Principal() {
   return (
-    <section id="principal" className="bg-paper-100 py-20 lg:py-28">
+    <section id="principal" className="bg-paper-50 py-20 lg:py-28">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div className="order-2 lg:order-1" data-reveal>
-            <p className="eyebrow flex items-center gap-3 text-indigo-700">
+            <p className="eyebrow flex items-center gap-3 text-marigold-500">
               <span className="h-px w-8 bg-marigold-500" aria-hidden="true" />
               Executive Director
             </p>
@@ -62,7 +62,7 @@ export default function Principal() {
           </div>
 
           <figure className="order-1 lg:order-2" data-reveal data-reveal-bloom>
-            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full bg-indigo-800/8 ring-8 ring-marigold-500/25">
+            <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full bg-indigo-800/8 ring-8 ring-marigold-500">
               <Image
                 src="/people/preeti-portrait.png"
                 alt="Dr. Preeti Bakshi"
