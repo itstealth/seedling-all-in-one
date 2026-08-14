@@ -12,7 +12,11 @@ test("renders links to each property and a copyright line", () => {
     "href",
     "https://smhs.seedlingschools.com",
   );
-  expect(screen.getByRole("link", { name: /^cambridge\b/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /^sia\b/i })).toHaveAttribute(
+    "href",
+    "https://seedling-international-academy.vercel.app",
+  );
+  expect(screen.getByRole("link", { name: /^smia\b/i })).toHaveAttribute(
     "href",
     "https://seedling-international-academy.vercel.app",
   );

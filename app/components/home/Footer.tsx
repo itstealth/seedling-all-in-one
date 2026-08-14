@@ -3,7 +3,8 @@ import { LINKS, external } from "./links";
 const SCHOOL_LINKS = [
   { label: "SPS", href: LINKS.sps, note: "CBSE" },
   { label: "SMHS", href: LINKS.smhs, note: "CBSE" },
-  { label: "Cambridge", href: LINKS.cambridge, note: "Cambridge" },
+  { label: "SIA", href: LINKS.cambridge, note: "Cambridge" },
+  { label: "SMIA", href: LINKS.cambridge, note: "Cambridge" },
 ];
 
 const GROUP_LINKS = [
