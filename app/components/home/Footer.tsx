@@ -1,10 +1,12 @@
 import { LINKS, external } from "./links";
 
+// SIA and SMIA share the Cambridge site, so SMIA needs its own campus path —
+// previously both pointed at the same URL.
 const SCHOOL_LINKS = [
   { label: "SPS", href: LINKS.sps, note: "CBSE" },
   { label: "SMHS", href: LINKS.smhs, note: "CBSE" },
   { label: "SIA", href: LINKS.cambridge, note: "Cambridge" },
-  { label: "SMIA", href: LINKS.cambridge, note: "Cambridge" },
+  { label: "SMIA", href: LINKS.smia, note: "Cambridge" },
 ];
 
 const GROUP_LINKS = [

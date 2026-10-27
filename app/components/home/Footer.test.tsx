@@ -14,11 +14,13 @@ test("renders links to each property and a copyright line", () => {
   );
   expect(screen.getByRole("link", { name: /^sia\b/i })).toHaveAttribute(
     "href",
-    "https://seedling-international-academy.vercel.app",
+    "https://cambridge.seedlingschools.com",
   );
+  // SMIA shares the Cambridge site but must reach its own campus page — both
+  // pointing at the bare domain sent SMIA visitors to SIA.
   expect(screen.getByRole("link", { name: /^smia\b/i })).toHaveAttribute(
     "href",
-    "https://seedling-international-academy.vercel.app",
+    "https://cambridge.seedlingschools.com/smia",
   );
   expect(screen.getByRole("link", { name: /^alumni$/i })).toHaveAttribute(
     "href",

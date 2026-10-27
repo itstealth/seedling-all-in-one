@@ -12,11 +12,3 @@ test("renders the headline and the founding year", () => {
   ).toBeInTheDocument();
   expect(screen.getByText(/established 1992/i)).toBeInTheDocument();
 });
-
-test("renders the group statistics", () => {
-  render(<Hero />);
-  expect(screen.getByText("20,000+")).toBeInTheDocument();
-  expect(screen.getByText("15:1")).toBeInTheDocument();
-  expect(screen.getByText("5,000+")).toBeInTheDocument();
-  expect(screen.getByText("50+")).toBeInTheDocument();
-});

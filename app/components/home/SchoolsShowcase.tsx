@@ -1,35 +1,28 @@
 import Image from "next/image";
-import Link from "next/link";
-import { LINKS, external } from "./links";
+import { BASE_PATH, LINKS, external } from "./links";
 
-const SCHOOLS = [
+const BOARDS = [
   {
     board: "CBSE",
-    name: "Seedling Public School",
-    stage: "Class I – XII",
-    photo: "/campus/feature-1.jpg",
-    href: LINKS.sps,
-  },
-  {
-    board: "CBSE",
-    name: "Seedling Modern High School",
-    stage: "Class I – XII",
-    photo: "/campus/feature-2.jpg",
-    href: LINKS.smhs,
+    heading: "The CBSE campuses",
+    tagline: "Two campuses, one curriculum, the same standard throughout.",
+    photo: `${BASE_PATH}/campus/feature-1.jpg`,
+    scrim: "from-indigo-950 via-indigo-950/75",
+    schools: [
+      { name: "Seedling Public School", href: LINKS.sps },
+      { name: "Seedling Modern High School", href: LINKS.smhs },
+    ],
   },
   {
     board: "Cambridge",
-    name: "Seedling International Academy",
-    stage: "Early Years – A Level",
-    photo: "/campus/sia-card.jpg",
-    href: LINKS.cambridge,
-  },
-  {
-    board: "Cambridge",
-    name: "Seedling Modern International Academy",
-    stage: "Class I – XII",
-    photo: "/campus/feature-5.jpg",
-    href: LINKS.cambridge,
+    heading: "The Cambridge campuses",
+    tagline: "An international route, taught across both campuses at home.",
+    photo: `${BASE_PATH}/campus/sia-card.jpg`,
+    scrim: "from-marigold-500 via-marigold-500/75",
+    schools: [
+      { name: "Seedling International Academy", href: LINKS.cambridge },
+      { name: "Seedling Modern International Academy", href: LINKS.cambridge },
+    ],
   },
 ] as const;
 
@@ -54,70 +47,63 @@ export default function SchoolsShowcase() {
             Pick the board that fits your child&rsquo;s route — the standard
             behind it does not change.
           </p>
-
-          <Link
-            href="/schools"
-            className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-indigo-800 transition-colors hover:text-indigo-700"
-          >
-            View all schools
-            <span
-              aria-hidden="true"
-              className="transition-transform group-hover:translate-x-1"
-            >
-              →
-            </span>
-          </Link>
         </div>
 
         <ul
-          className="mt-12 grid gap-5 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4"
+          className="mt-12 grid gap-5 lg:mt-16 lg:grid-cols-2"
           data-reveal-group
         >
-          {SCHOOLS.map((school) => (
-            <li key={school.name}>
-              <a
-                href={school.href}
-                {...external}
-                className="group relative flex min-h-[22rem] flex-col justify-end overflow-hidden rounded-2xl lg:min-h-[26rem]"
-              >
+          {BOARDS.map((group) => (
+            <li key={group.board}>
+              <div className="relative flex min-h-[24rem] flex-col justify-end overflow-hidden rounded-2xl lg:min-h-[28rem]">
                 {/* The photograph carries the card; the scrim only buys
                     legibility for the type sitting on the lower half. */}
                 <Image
-                  src={school.photo}
+                  src={group.photo}
                   alt=""
                   fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                 />
                 <div
                   aria-hidden="true"
-                  className={`absolute inset-0 bg-gradient-to-t to-transparent ${
-                    school.board === "Cambridge"
-                      ? "from-marigold-500 via-marigold-500/60"
-                      : "from-indigo-950 via-indigo-950/60"
-                  }`}
+                  className={`absolute inset-0 bg-gradient-to-t ${group.scrim} to-transparent`}
                 />
 
-                <div className="relative p-6">
+                <div className="relative p-7 lg:p-9">
                   <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-paper-100">
-                    {school.board}
+                    {group.board}
                   </p>
-                  <h3 className="mt-2 font-display text-lg font-medium leading-snug tracking-tight text-paper-50">
-                    {school.name}
+                  <h3 className="mt-2.5 font-display text-[1.75rem] font-medium leading-[1.15] tracking-tight text-paper-50">
+                    {group.heading}
                   </h3>
-                  <div className="mt-4 flex items-center justify-between gap-3 border-t border-paper-50/15 pt-3.5">
-                    <span className="text-xs text-paper-200/70">
-                      {school.stage}
-                    </span>
-                    <span
-                      aria-hidden="true"
-                      className="shrink-0 text-lg leading-none text-paper-50 transition-transform duration-300 group-hover:translate-x-1"
-                    >
-                      →
-                    </span>
-                  </div>
+                  <p className="mt-2 max-w-sm text-[0.9375rem] leading-relaxed text-paper-100/80">
+                    {group.tagline}
+                  </p>
+
+                  <ul className="mt-6 divide-y divide-paper-50/15 border-t border-paper-50/15">
+                    {group.schools.map((school) => (
+                      <li key={school.name}>
+                        <a
+                          href={school.href}
+                          {...external}
+                          className="group flex items-center justify-between gap-4 py-3.5 text-paper-50 transition-colors hover:text-paper-100"
+                        >
+                          <span className="font-display text-[1.0625rem] leading-snug">
+                            {school.name}
+                          </span>
+                          <span
+                            aria-hidden="true"
+                            className="shrink-0 text-xl leading-none transition-transform duration-300 group-hover:translate-x-1"
+                          >
+                            ↳
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </a>
+              </div>
             </li>
           ))}
         </ul>

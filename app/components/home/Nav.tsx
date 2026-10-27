@@ -1,32 +1,32 @@
 import Image from "next/image";
-import { LINKS, external } from "./links";
+import { BASE_PATH, LINKS, external } from "./links";
 
 const SCHOOL_TABS = [
   {
     label: "SPS",
     href: LINKS.sps,
-    logo: "/logos/sps-logo.png",
+    logo: `${BASE_PATH}/logos/sps-logo.png`,
     alt: "Seedling Public School",
     width: "w-20",
   },
   {
     label: "SMHS",
     href: LINKS.smhs,
-    logo: "/logos/smhs-logo.webp",
+    logo: `${BASE_PATH}/logos/smhs-logo.webp`,
     alt: "Seedling Modern High School",
     width: "w-8",
   },
   {
     label: "SIA",
     href: LINKS.cambridge,
-    logo: "/logos/sia-logo-dark.png",
+    logo: `${BASE_PATH}/logos/sia-logo-dark.png`,
     alt: "Seedling International Academy",
     width: "w-24",
   },
   {
     label: "SMIA",
     href: LINKS.cambridge,
-    logo: "/logos/smia-logo-dark.webp",
+    logo: `${BASE_PATH}/logos/smia-logo-dark.webp`,
     alt: "Seedling Modern International Academy",
     width: "w-28",
   },

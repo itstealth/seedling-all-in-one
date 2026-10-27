@@ -1,21 +1,21 @@
 import Image from "next/image";
-import { LINKS, external } from "./links";
+import { BASE_PATH, LINKS, external } from "./links";
 
 const ALUMNI = [
   {
     name: "Harshil Mathur",
     title: "CEO, Razorpay",
-    photo: "/people/harshil-portrait.png",
+    photo: `${BASE_PATH}/people/harshil-portrait.png`,
   },
   {
     name: "Abhishek Tripathi",
     title: "Wing Commander",
-    photo: "/people/abhishek-portrait.png",
+    photo: `${BASE_PATH}/people/abhishek-portrait.png`,
   },
   {
     name: "Shashank Jain",
     title: "Head of Architecture & Design",
-    photo: "/people/shashank-portrait.png",
+    photo: `${BASE_PATH}/people/shashank-portrait.png`,
   },
 ] as const;
 

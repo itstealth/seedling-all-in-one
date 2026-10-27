@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LINKS, external } from "./links";
+import { BASE_PATH, LINKS, external } from "./links";
 
 export default function DirectorMessage() {
   return (
@@ -11,7 +11,7 @@ export default function DirectorMessage() {
           <figure data-reveal data-reveal-bloom>
             <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-full bg-indigo-900 ring-8 ring-paper-100/30">
               <Image
-                src="/people/sandeep-portrait.png"
+                src={`${BASE_PATH}/people/sandeep-portrait.png`}
                 alt="Dr. Sandeep Bakshi"
                 fill
                 sizes="(min-width: 1024px) 38vw, 100vw"

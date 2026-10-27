@@ -25,9 +25,6 @@ export default function Page() {
         <Principal />
         {/* Alumni */}
         <AlumniSpotlight />
-        {/* The Admissions panel is hidden for now — each campus site carries its
-            own admissions flow, and the group nav already routes there.
-            components/home/Admissions.tsx is kept so it can be dropped back in. */}
         <GroupCta />
       </main>
       <Footer />

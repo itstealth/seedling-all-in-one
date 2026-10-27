@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BASE_PATH } from "./links";
 
 const OVERSEES = [
   { school: "Seedling Public School", board: "CBSE" },
@@ -64,7 +65,7 @@ export default function Principal() {
           <figure className="order-1 lg:order-2" data-reveal data-reveal-bloom>
             <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-full bg-indigo-800/8 ring-8 ring-marigold-500">
               <Image
-                src="/people/preeti-portrait.png"
+                src={`${BASE_PATH}/people/preeti-portrait.png`}
                 alt="Dr. Preeti Bakshi"
                 fill
                 sizes="(min-width: 1024px) 34vw, 100vw"

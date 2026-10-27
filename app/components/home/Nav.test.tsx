@@ -14,7 +14,7 @@ test("the group switcher links to every school by name", () => {
     screen.getByRole("link", { name: "Seedling International Academy" }),
   ).toHaveAttribute(
     "href",
-    "https://seedling-international-academy.vercel.app",
+    "https://cambridge.seedlingschools.com",
   );
   expect(
     screen.getByRole("link", {
@@ -22,7 +22,7 @@ test("the group switcher links to every school by name", () => {
     }),
   ).toHaveAttribute(
     "href",
-    "https://seedling-international-academy.vercel.app",
+    "https://cambridge.seedlingschools.com",
   );
 });
 
