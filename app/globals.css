@@ -244,3 +244,119 @@
     transform: none;
   }
 }
+
+/* The thank-you page uses a short entrance and slow, low-contrast ambient
+   movement to make the confirmation feel warm without distracting from it. */
+@keyframes thankyou-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes thankyou-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes thankyou-halo {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(0.96);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes thankyou-glow {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes thankyou-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.thankyou-copy > * {
+  animation: thankyou-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.thankyou-copy > :nth-child(1) { animation-delay: 80ms; }
+.thankyou-copy > :nth-child(2) { animation-delay: 180ms; }
+.thankyou-copy > :nth-child(3) { animation-delay: 260ms; }
+.thankyou-copy > :nth-child(4) { animation-delay: 340ms; }
+.thankyou-copy > :nth-child(5) { animation-delay: 420ms; }
+.thankyou-copy > :nth-child(6) { animation-delay: 500ms; }
+
+.thankyou-check-halo {
+  animation: thankyou-halo 3.8s ease-in-out 1.3s infinite;
+}
+
+.thankyou-check-ring {
+  stroke-dasharray: 126;
+  stroke-dashoffset: 126;
+  animation: thankyou-draw 900ms cubic-bezier(0.22, 1, 0.36, 1) 280ms forwards;
+}
+
+.thankyou-check-tick {
+  stroke-dasharray: 28;
+  stroke-dashoffset: 28;
+  animation: thankyou-draw 560ms cubic-bezier(0.22, 1, 0.36, 1) 850ms forwards;
+}
+
+.thankyou-glow {
+  animation: thankyou-glow 8s ease-in-out infinite;
+}
+
+.thankyou-card-wrap {
+  animation: thankyou-rise 850ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+}
+
+.thankyou-card {
+  animation: thankyou-float 8s ease-in-out 1.2s infinite;
+}
+
+.thankyou-step {
+  animation: thankyou-rise 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.thankyou-step:nth-child(1) { animation-delay: 500ms; }
+.thankyou-step:nth-child(2) { animation-delay: 640ms; }
+.thankyou-step:nth-child(3) { animation-delay: 780ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .thankyou-copy > *,
+  .thankyou-check-halo,
+  .thankyou-check-ring,
+  .thankyou-check-tick,
+  .thankyou-glow,
+  .thankyou-card-wrap,
+  .thankyou-card,
+  .thankyou-step {
+    animation: none;
+    opacity: 1;
+    stroke-dashoffset: 0;
+    transform: none;
+  }
+}
