@@ -8,10 +8,19 @@ import AlumniSpotlight from './components/home/AlumniSpotlight'
 import GroupCta from './components/home/GroupCta'
 import Footer from './components/home/Footer'
 import MobileActionBar, { MOBILE_BAR_SPACER } from './components/home/MobileActionBar'
+import OrganizationJsonLd from './components/home/OrganizationJsonLd'
+import type { Metadata } from 'next'
+import { canonicalFor } from './site-metadata'
+
+// Title and description come from the root layout.
+export const metadata: Metadata = {
+  ...canonicalFor('/'),
+}
 
 export default function Page() {
   return (
     <>
+      <OrganizationJsonLd />
       <Nav />
       <main>
         {/* Seedling Group of Schools */}

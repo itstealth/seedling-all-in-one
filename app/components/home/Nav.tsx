@@ -21,7 +21,7 @@ const SCHOOL_TABS = [
   },
   {
     label: "SIA",
-    href: LINKS.cambridge,
+    href: LINKS.sia,
     logo: `${BASE_PATH}/logos/sia-logo-dark.png`,
     icon: `${BASE_PATH}/logos/sia-icon.png`,
     alt: "Seedling International Academy",
@@ -29,7 +29,7 @@ const SCHOOL_TABS = [
   },
   {
     label: "SMIA",
-    href: LINKS.cambridge,
+    href: LINKS.smia,
     logo: `${BASE_PATH}/logos/smia-logo-dark.webp`,
     icon: `${BASE_PATH}/logos/smia-icon.png`,
     alt: "Seedling Modern International Academy",
@@ -60,25 +60,23 @@ export default function Nav() {
               aria-label={school.alt}
               className="group flex flex-1 items-center justify-center gap-2.5 border-l border-paper-200/10 py-2 first:border-l-0 transition-colors hover:bg-indigo-900 sm:flex-none sm:px-5 sm:py-2.5 sm:first:border-l"
             >
-              <span
-                aria-hidden="true"
-                className="relative h-8 w-8 shrink-0 opacity-90 transition-opacity group-hover:opacity-100 sm:hidden"
-              >
+              {/* The link's aria-label names it; the alt text describes the
+                  image itself for anyone (or any crawler) reading images. */}
+              <span className="relative h-8 w-8 shrink-0 opacity-90 transition-opacity group-hover:opacity-100 sm:hidden">
                 <Image
                   src={school.icon}
-                  alt=""
+                  alt={`${school.alt} logo`}
                   fill
                   sizes="32px"
                   className="object-contain"
                 />
               </span>
               <span
-                aria-hidden="true"
                 className={`relative hidden h-7 ${school.width} shrink-0 opacity-80 transition-opacity group-hover:opacity-100 sm:block`}
               >
                 <Image
                   src={school.logo}
-                  alt=""
+                  alt={`${school.alt} logo`}
                   fill
                   sizes="80px"
                   className="object-contain"

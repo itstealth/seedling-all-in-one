@@ -4,6 +4,7 @@ import Script from "next/script";
 import Reveal from "./components/Reveal";
 import "./globals.css";
 import LeadAttribution from '@/app/components/LeadAttribution';
+import { SHARED_OPEN_GRAPH, SITE_ICON, SITE_URL } from "./site-metadata";
 
 /**
  * Google Tag Manager. The legacy PHP pages carry this same container via
@@ -30,12 +31,19 @@ const tiro = Tiro_Devanagari_Sanskrit({
 });
 
 export const metadata: Metadata = {
+  // Lets pages give relative URLs (og:image, canonicals) that resolve to
+  // absolute ones. Canonicals themselves are set per page — see site-metadata.
+  metadataBase: new URL(SITE_URL),
   title: "Seedling Group of Schools — Nursery to University",
   description:
-    "Since 1992, the Seedling Group has carried students from play group to university across CBSE and Cambridge campuses in Jaipur. 20,000+ students, 5,000+ alumni.",
+    "Since 1992, the Seedling Group has carried students from Playgroup to university across CBSE and Cambridge campuses in Jaipur. 20,000+ students, 5,000+ alumni.",
   icons: {
-    icon: "https://seedlingschools.com/assets/img/favicon.png",
+    icon: SITE_ICON,
   },
+  // No url here: og:url belongs to each page, set alongside its canonical.
+  // og:title and og:description fall back to the page's own title/description.
+  openGraph: SHARED_OPEN_GRAPH,
+  twitter: { card: "summary_large_image" },
 };
 
 export default function RootLayout({

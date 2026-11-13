@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         <Image
           src={`${BASE_PATH}/campus/about-banner.jpg`}
-          alt=""
+          alt="Seedling students in red tartan pipe-band uniforms marching across the school sports ground"
           fill
           priority
           sizes="100vw"
@@ -37,7 +37,7 @@ export default function Hero() {
 
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper-200">
               One group, five institutions, and a single unbroken path — from
-              playgroup through Class XII, across CBSE and Cambridge, and out
+              Playgroup through Class XII, across CBSE and Cambridge, and out
               into the world.
             </p>
 

@@ -18,7 +18,7 @@ test("groups the two Cambridge schools under one card", () => {
     screen.getByRole("link", { name: "Seedling International Academy" }),
   ).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/sia",
   );
   expect(
     screen.getByRole("link", {
@@ -26,7 +26,7 @@ test("groups the two Cambridge schools under one card", () => {
     }),
   ).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/smia",
   );
 });
 

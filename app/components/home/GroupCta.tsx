@@ -1,5 +1,3 @@
-import { LINKS, external } from "./links";
-
 export default function GroupCta() {
   return (
     <section className="pb-20 lg:pb-28">
@@ -20,9 +18,10 @@ export default function GroupCta() {
             </p>
           </div>
 
+          {/* Scrolls to the hero enquiry form. It used to link to
+              seedlingschools.com, which is this page. */}
           <a
-            href={LINKS.group}
-            {...external}
+            href="#enquire"
             className="group inline-flex shrink-0 items-center gap-2 rounded-full bg-indigo-950 px-6 py-3.5 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-900"
           >
             Talk to the group office

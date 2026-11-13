@@ -17,7 +17,7 @@ const ROUTES = [
     name: "Seedling International Academy",
     board: "Cambridge",
     stage: "Early Years – A Level",
-    href: LINKS.cambridge,
+    href: LINKS.sia,
   },
 ] as const;
 

@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { NOINDEX } from "@/app/site-metadata";
 
 export const metadata: Metadata = {
   title: "Payment didn't go through — Seedling Group of Schools",
+  robots: NOINDEX,
 };
 
 export const dynamic = "force-dynamic";

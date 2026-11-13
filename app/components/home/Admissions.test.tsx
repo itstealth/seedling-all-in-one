@@ -14,7 +14,7 @@ test("routes to every school that takes admissions", () => {
     screen.getByRole("link", { name: /seedling international academy/i }),
   ).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/sia",
   );
 });
 

@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Nav from "../components/home/Nav";
 import Footer from "../components/home/Footer";
 import { LINKS, external } from "../components/home/links";
+import { canonicalFor } from "../site-metadata";
 
 export const metadata: Metadata = {
   title: "Our Schools — Seedling Group of Schools",
   description:
     "Two CBSE campuses and two Cambridge campuses, one group standard throughout.",
+  ...canonicalFor("/schools"),
 };
 
 const GROUPS = [
@@ -32,19 +34,19 @@ const GROUPS = [
   {
     board: "Cambridge",
     heading: "The Cambridge campuses",
-    tagline: "An international route, taught across both campuses at home.",
+    tagline: "One international curriculum, offered at both our Jaipur campuses.",
     schools: [
       {
         name: "Seedling International Academy",
         stage: "Early Years – A Level",
         note: "An internationally benchmarked route for families planning study abroad.",
-        href: LINKS.cambridge,
+        href: LINKS.sia,
       },
       {
         name: "Seedling Modern International Academy",
         stage: "Class I – XII",
         note: "A second Cambridge campus in Durgapura, extending the international route.",
-        href: LINKS.cambridge,
+        href: LINKS.smia,
       },
     ],
   },

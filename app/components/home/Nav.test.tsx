@@ -14,7 +14,7 @@ test("the group switcher links to every school by name", () => {
     screen.getByRole("link", { name: "Seedling International Academy" }),
   ).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/sia",
   );
   expect(
     screen.getByRole("link", {
@@ -22,7 +22,7 @@ test("the group switcher links to every school by name", () => {
     }),
   ).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/smia",
   );
 });
 

@@ -1,11 +1,10 @@
 import { LINKS, external } from "./links";
 
-// SIA and SMIA share the Cambridge site, so SMIA needs its own campus path —
-// previously both pointed at the same URL.
+// SIA and SMIA share the Cambridge site, so each links to its own campus page.
 const SCHOOL_LINKS = [
   { label: "SPS", href: LINKS.sps, note: "CBSE" },
   { label: "SMHS", href: LINKS.smhs, note: "CBSE" },
-  { label: "SIA", href: LINKS.cambridge, note: "Cambridge" },
+  { label: "SIA", href: LINKS.sia, note: "Cambridge" },
   { label: "SMIA", href: LINKS.smia, note: "Cambridge" },
 ];
 
@@ -25,7 +24,7 @@ export default function Footer() {
               Seedling Group of Schools
             </p>
             <p className="mt-4 text-[0.9375rem] leading-relaxed text-paper-200/70">
-              Carrying students from play group to university since 1992, across
+              Carrying students from Playgroup to university since 1992, across
               CBSE and Cambridge campuses.
             </p>
           </div>

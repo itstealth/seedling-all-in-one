@@ -1,6 +1,7 @@
 const STAGES = [
   {
-    stage: "Play group – KG",
+    // Rendered uppercase by CSS, so it reads "PLAYGROUP – KG".
+    stage: "Playgroup – KG",
     name: "Seedling Wonderland Kids League",
     board: "Early years",
     note: "First classrooms, first friendships. Play-led learning that makes school somewhere a child wants to be.",

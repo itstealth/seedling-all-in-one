@@ -46,7 +46,7 @@ export default function DirectorMessage() {
                 Dr. Sandeep Bakshi has led the Seedling Group as CEO &amp;
                 Director, carrying forward the institution founded by the late
                 Ms. Mohini Bakshi and expanding it into a complete educational
-                umbrella — play group through Class XII, on both CBSE and
+                umbrella — Playgroup through Class XII, on both CBSE and
                 Cambridge.
               </p>
               <p>
@@ -55,13 +55,13 @@ export default function DirectorMessage() {
                 it more relevant to the realities of the world today&rdquo; — a
                 school where learning happens{" "}
                 <span className="text-paper-100">
-                  not out of a text book or worksheet, but through contextual
-                  and real life problem solving
+                  not out of a textbook or worksheet, but through contextual,
+                  real-life problem-solving
                 </span>
                 .
               </p>
               <p className="font-display text-lg font-medium text-paper-50">
-                “From Play Group to University — your child, in our care, is
+                “From Playgroup to University — your child, in our care, is
                 promised a world of opportunities, memories and milestones.”
               </p>
             </div>

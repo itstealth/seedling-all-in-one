@@ -16,9 +16,12 @@ export const FORM_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
 export const LINKS = {
   sps: "https://sps.seedlingschools.com",
   smhs: "https://smhs.seedlingschools.com",
-  cambridge: "https://cambridge.seedlingschools.com",
-  /** SMIA shares the Cambridge site but has its own campus page. */
-  smia: "https://cambridge.seedlingschools.com/smia",
+  /**
+   * SIA and SMIA share the Cambridge site, each with its own campus page. Link
+   * the campus pages directly: the old /smia path is only a 307 to them.
+   */
+  sia: "https://cambridge.seedlingschools.com/campuses/sia",
+  smia: "https://cambridge.seedlingschools.com/campuses/smia",
   /**
    * About Us and Alumni go to the new SMHS site's pages. They used to point at
    * the old PHP site (seedlingschools.com/alumni.php and /about-us.php), which

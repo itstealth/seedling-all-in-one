@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { GRADES, SCHOOLS, findSchool } from "@/lib/schools";
 import ApplyForm, { type SchoolOption } from "./ApplyForm";
+import { canonicalFor } from "@/app/site-metadata";
 
 export const metadata: Metadata = {
   title: "Apply Online — Seedling Group of Schools",
   description:
     "Submit an admission application and pay the registration fee online for any Seedling campus in Jaipur.",
+  // The school domains proxy this same form, so every copy points search
+  // engines at the one group URL.
+  ...canonicalFor("/admissions/apply"),
 };
 
 /**

@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { findByTransaction } from "@/lib/db";
+import { NOINDEX } from "@/app/site-metadata";
 
 export const metadata: Metadata = {
   title: "Application received — Seedling Group of Schools",
+  robots: NOINDEX,
 };
 
 export const dynamic = "force-dynamic";

@@ -7,6 +7,8 @@ const BOARDS = [
     heading: "The CBSE campuses",
     tagline: "Two campuses, one curriculum, the same standard throughout.",
     photo: `${BASE_PATH}/campus/feature-1.jpg`,
+    photoAlt:
+      "A smiling boy in a white school polo shirt sitting at his classroom desk with a laptop",
     scrim: "from-indigo-950 via-indigo-950/75",
     schools: [
       { name: "Seedling Public School", href: LINKS.sps },
@@ -16,12 +18,14 @@ const BOARDS = [
   {
     board: "Cambridge",
     heading: "The Cambridge campuses",
-    tagline: "An international route, taught across both campuses at home.",
+    tagline: "One international curriculum, offered at both our Jaipur campuses.",
     photo: `${BASE_PATH}/campus/sia-card.jpg`,
+    photoAlt:
+      "Four students in white shirts, purple ties and purple uniforms standing arms folded in a school corridor",
     scrim: "from-marigold-500 via-marigold-500/75",
     schools: [
-      { name: "Seedling International Academy", href: LINKS.cambridge },
-      { name: "Seedling Modern International Academy", href: LINKS.cambridge },
+      { name: "Seedling International Academy", href: LINKS.sia },
+      { name: "Seedling Modern International Academy", href: LINKS.smia },
     ],
   },
 ] as const;
@@ -60,7 +64,7 @@ export default function SchoolsShowcase() {
                     legibility for the type sitting on the lower half. */}
                 <Image
                   src={group.photo}
-                  alt=""
+                  alt={group.photoAlt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"

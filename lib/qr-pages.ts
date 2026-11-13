@@ -76,7 +76,7 @@ export const QR_PAGES: readonly QrPage[] = [
     tagline: "Cambridge · Jawahar Nagar, Jaipur",
     logo: "/logos/sia-logo.png",
     links: [
-      { label: "Visit our website", href: "https://cambridge.seedlingschools.com", variant: "solid" },
+      { label: "Visit our website", href: "https://cambridge.seedlingschools.com/campuses/sia", variant: "solid" },
       { label: "Apply & pay online", href: "https://cambridge.seedlingschools.com/admissions/apply", variant: "solid" },
       { label: "Admissions", href: "https://cambridge.seedlingschools.com/admissions", variant: "outline" },
     ],
@@ -92,7 +92,7 @@ export const QR_PAGES: readonly QrPage[] = [
     tagline: "Cambridge · Durgapura, Jaipur",
     logo: "/logos/smia-logo.png",
     links: [
-      { label: "Visit our website", href: "https://cambridge.seedlingschools.com/smia", variant: "solid" },
+      { label: "Visit our website", href: "https://cambridge.seedlingschools.com/campuses/smia", variant: "solid" },
       // The Cambridge site's own form is fixed to SIA, so SMIA applicants go to
       // the group form with their campus preselected — otherwise they'd be
       // charged against the wrong school.

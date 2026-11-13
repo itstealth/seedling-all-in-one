@@ -2,11 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { BASE_PATH } from "../components/home/links";
+import { NOINDEX } from "../site-metadata";
 
 export const metadata: Metadata = {
   title: "Thank you — Seedling Group of Schools",
   description:
     "Thank you for getting in touch with Seedling Group of Schools. Our team will be in touch soon.",
+  robots: NOINDEX,
 };
 
 export default function ThankYouPage() {

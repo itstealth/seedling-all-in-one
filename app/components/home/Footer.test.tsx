@@ -12,15 +12,15 @@ test("renders links to each property and a copyright line", () => {
     "href",
     "https://smhs.seedlingschools.com",
   );
+  // SIA and SMIA share the Cambridge site, so each links to its own campus
+  // page directly — the old /smia path is only a redirect to it.
   expect(screen.getByRole("link", { name: /^sia\b/i })).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com",
+    "https://cambridge.seedlingschools.com/campuses/sia",
   );
-  // SMIA shares the Cambridge site but must reach its own campus page — both
-  // pointing at the bare domain sent SMIA visitors to SIA.
   expect(screen.getByRole("link", { name: /^smia\b/i })).toHaveAttribute(
     "href",
-    "https://cambridge.seedlingschools.com/smia",
+    "https://cambridge.seedlingschools.com/campuses/smia",
   );
   expect(screen.getByRole("link", { name: /^alumni$/i })).toHaveAttribute(
     "href",
