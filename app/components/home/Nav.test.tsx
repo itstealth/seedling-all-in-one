@@ -44,7 +44,7 @@ test("links to the alumni page", () => {
   for (const link of alumni) {
     expect(link).toHaveAttribute(
       "href",
-      "https://seedlingschools.com/alumni.php",
+      "https://smhs.seedlingschools.com/alumni",
     );
   }
 });

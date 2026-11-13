@@ -17,11 +17,14 @@ export default function InquiryForm() {
     document.body.appendChild(script);
   }, []);
 
+  // id="enquire": target of the phone action bar's "Enquire Now"; scroll-mt-14
+  // clears the two-row sticky header on top of the global scroll padding.
   return (
     <div
+      id="enquire"
       data-reveal
       data-reveal-bloom
-      className="rounded-2xl bg-paper-50 p-6 shadow-2xl shadow-indigo-950/25 sm:p-7"
+      className="scroll-mt-14 rounded-2xl bg-paper-50 p-6 shadow-2xl shadow-indigo-950/25 sm:p-7"
     >
       <p className="font-display text-xl font-semibold leading-snug text-indigo-950">
         Talk to our admissions team

@@ -3,6 +3,7 @@ import { Fraunces, Karla, Tiro_Devanagari_Sanskrit } from "next/font/google";
 import Script from "next/script";
 import Reveal from "./components/Reveal";
 import "./globals.css";
+import LeadAttribution from '@/app/components/LeadAttribution';
 
 /**
  * Google Tag Manager. The legacy PHP pages carry this same container via
@@ -32,6 +33,9 @@ export const metadata: Metadata = {
   title: "Seedling Group of Schools — Nursery to University",
   description:
     "Since 1992, the Seedling Group has carried students from play group to university across CBSE and Cambridge campuses in Jaipur. 20,000+ students, 5,000+ alumni.",
+  icons: {
+    icon: "https://seedlingschools.com/assets/img/favicon.png",
+  },
 };
 
 export default function RootLayout({
@@ -54,6 +58,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
+        <script dangerouslySetInnerHTML={{ __html: `var npf_d='https://apply.seedlingschools.com';var npf_c='7260';var npf_m='1';var s=document.createElement("script");s.type="text/javascript";s.async=true;s.src="https://track.nopaperforms.com/js/track.js";document.body.appendChild(s);` }} />
+        <LeadAttribution />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}

@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Rollback builds, backups and the CMS outbox kept on the live server
+/.next*/
+/.gtm-backup*/
+/.cms-outbox/
+

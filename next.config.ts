@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Lets a build target a scratch dir (NEXT_BUILD_DIR=.next-new) so the running
+  // app keeps serving the current build until the new one is swapped in.
+  distDir: process.env.NEXT_BUILD_DIR || ".next",
   // Served by a Node process behind IIS ARR (port 3003), matching how
   // sps/smhs/cambridge already run on this server.
   //

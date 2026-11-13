@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { randomUUID } from "node:crypto";
 import { buildRedirectUrl, type AtomRequest } from "@/lib/atom";
 import {
@@ -8,6 +8,8 @@ import {
 } from "@/lib/application-schema";
 import { attachTransaction, createApplication } from "@/lib/db";
 import { findSchool, merchantCredentials } from "@/lib/schools";
+import { cmsExternalId, cmsTokenEnvFor } from "@/lib/cms-admissions";
+import { attributionFrom, flushOutbox, pageFrom, queueForCms } from "@/lib/cms-leads";
 
 export const runtime = "nodejs";
 /** Never cache: every call writes a row and mints a transaction. */
@@ -113,6 +115,46 @@ export async function POST(request: Request) {
       { error: "We couldn't save your application. Please try again." },
       { status: 500 }
     );
+  }
+
+  // Copy for the school's CMS lead inbox (lib/cms-leads.ts). Written to the
+  // local outbox and sent after the response, so the payment redirect never
+  // waits on the CMS. Deliberately leaves out Aadhaar, caste, religion and
+  // income: the full record stays in tb_online_form and this admin.
+  const tokenEnv = cmsTokenEnvFor(school);
+  if (tokenEnv) {
+    const { site, pageUrl } = pageFrom(request);
+    const details: Record<string, string> = {
+      School: school.label,
+      "Application no": String(created.uniqueNo),
+      "Application fee": `Rs ${school.feeInr}`,
+      Mother: fields.motherName,
+      Gender: fields.gender,
+      "Day scholar / hosteller": fields.residential,
+      District: fields.district,
+      State: fields.state,
+      "Previous school": fields.namePreviousSchool,
+    };
+    await queueForCms(
+      "lead",
+      {
+        externalId: cmsExternalId(created.uniqueNo),
+        formType: "application",
+        formName: "Online admission form",
+        site,
+        pageUrl,
+        name: fields.fatherName || fields.motherName,
+        phone: mobile,
+        email: fields.email || undefined,
+        studentName: fields.name,
+        className: fields.className,
+        details: Object.fromEntries(Object.entries(details).filter(([, v]) => v?.trim())),
+        paymentStatus: "PENDING",
+        attribution: attributionFrom(request),
+      },
+      tokenEnv
+    );
+    after(() => flushOutbox());
   }
 
   // A UUID-derived transaction id, rather than the legacy `rand(1,1000000)`

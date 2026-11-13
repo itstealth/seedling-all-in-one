@@ -15,5 +15,5 @@ test("links to the full communique", () => {
   render(<DirectorMessage />);
   expect(
     screen.getByRole("link", { name: /read the full communiqu/i }),
-  ).toHaveAttribute("href", "https://seedlingschools.com/about-us.php");
+  ).toHaveAttribute("href", "https://smhs.seedlingschools.com/about");
 });

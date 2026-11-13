@@ -19,8 +19,13 @@ export const LINKS = {
   cambridge: "https://cambridge.seedlingschools.com",
   /** SMIA shares the Cambridge site but has its own campus page. */
   smia: "https://cambridge.seedlingschools.com/smia",
-  alumni: "https://seedlingschools.com/alumni.php",
-  about: "https://seedlingschools.com/about-us.php",
+  /**
+   * About Us and Alumni go to the new SMHS site's pages. They used to point at
+   * the old PHP site (seedlingschools.com/alumni.php and /about-us.php), which
+   * v1 of this homepage linked to on purpose until new pages existed.
+   */
+  alumni: "https://smhs.seedlingschools.com/alumni",
+  about: "https://smhs.seedlingschools.com/about",
   group: "https://seedlingschools.com",
 } as const;
 

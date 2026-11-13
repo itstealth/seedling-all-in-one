@@ -24,11 +24,11 @@ test("renders links to each property and a copyright line", () => {
   );
   expect(screen.getByRole("link", { name: /^alumni$/i })).toHaveAttribute(
     "href",
-    "https://seedlingschools.com/alumni.php",
+    "https://smhs.seedlingschools.com/alumni",
   );
   expect(screen.getByRole("link", { name: /^about us$/i })).toHaveAttribute(
     "href",
-    "https://seedlingschools.com/about-us.php",
+    "https://smhs.seedlingschools.com/about",
   );
   expect(screen.getByText(/all rights reserved/i)).toBeInTheDocument();
 });

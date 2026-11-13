@@ -7,6 +7,7 @@ import Principal from './components/home/Principal'
 import AlumniSpotlight from './components/home/AlumniSpotlight'
 import GroupCta from './components/home/GroupCta'
 import Footer from './components/home/Footer'
+import MobileActionBar, { MOBILE_BAR_SPACER } from './components/home/MobileActionBar'
 
 export default function Page() {
   return (
@@ -28,6 +29,9 @@ export default function Page() {
         <GroupCta />
       </main>
       <Footer />
+      {/* Keeps the end of the footer clear of the phone-only action bar. */}
+      <div className={`${MOBILE_BAR_SPACER} bg-indigo-950 md:hidden`} aria-hidden="true" />
+      <MobileActionBar />
     </>
   )
 }

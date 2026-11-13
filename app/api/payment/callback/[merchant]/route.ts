@@ -1,6 +1,8 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { isSuccess, verifyResponse, type AtomResponse } from "@/lib/atom";
 import { recordPaymentOutcome } from "@/lib/db";
+import { cmsExternalId, cmsTokenEnvFor, findForCms } from "@/lib/cms-admissions";
+import { flushOutbox, queueForCms } from "@/lib/cms-leads";
 import { MERCHANTS, merchantCredentials, type MerchantId } from "@/lib/schools";
 
 export const runtime = "nodejs";
@@ -75,6 +77,31 @@ export async function POST(
     // and let reconciliation catch the row. Losing the redirect would be worse.
     console.error("[payment-callback] could not record outcome:", err);
   }
+
+  // Tell the school's CMS inbox how the payment went. Re-sends the same lead
+  // id, which the CMS treats as "update payment status only". Never blocks
+  // or fails the parent's redirect.
+  after(async () => {
+    try {
+      const app = await findForCms(txnId);
+      const tokenEnv = app?.school ? cmsTokenEnvFor(app.school) : undefined;
+      if (!app || !tokenEnv) return;
+      await queueForCms(
+        "lead",
+        {
+          externalId: cmsExternalId(app.uniqueNo),
+          formType: "application",
+          phone: app.mobile || undefined,
+          email: app.email || undefined,
+          paymentStatus: success ? "SUCCESS" : "FAILED",
+        },
+        tokenEnv
+      );
+      await flushOutbox();
+    } catch (err) {
+      console.error("[payment-callback] CMS payment update not queued:", err);
+    }
+  });
 
   return redirectToResult(request, success ? "thank-you" : "failed", txnId);
 }

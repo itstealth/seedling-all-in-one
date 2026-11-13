@@ -9,5 +9,5 @@ test("renders the three named alumni and a link to the full alumni page", () => 
   expect(screen.getByText(/shashank jain/i)).toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: /see more alumni/i }),
-  ).toHaveAttribute("href", "https://seedlingschools.com/alumni.php");
+  ).toHaveAttribute("href", "https://smhs.seedlingschools.com/alumni");
 });
