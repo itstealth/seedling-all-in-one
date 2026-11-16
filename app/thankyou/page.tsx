@@ -17,7 +17,7 @@ export default function ThankYouPage() {
       <div className="absolute inset-0" aria-hidden="true">
         <Image
           src={`${BASE_PATH}/campus/about-banner.jpg`}
-          alt=""
+          alt="Seedling students in red tartan pipe-band uniforms marching across the school sports ground"
           fill
           priority
           sizes="100vw"
