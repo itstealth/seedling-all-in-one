@@ -19,7 +19,7 @@ export default function DirectorMessage() {
               />
             </div>
             <figcaption className="mt-6 text-center text-sm text-paper-200/70">
-              CEO &amp; Director, Seedling Group of Institutions
+              CEO &amp; Director, Seedling Group of Schools
             </figcaption>
           </figure>
 
@@ -71,7 +71,7 @@ export default function DirectorMessage() {
               {...external}
               className="group mt-9 inline-flex items-center gap-2 text-sm font-semibold text-paper-100 transition-colors hover:text-paper-50"
             >
-              Read the full communiqué
+              Read the SMHS communiqué
               <span
                 aria-hidden="true"
                 className="transition-transform group-hover:translate-x-1"

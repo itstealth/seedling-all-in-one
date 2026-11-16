@@ -6,6 +6,9 @@ import { canonicalFor } from "../site-metadata";
 
 export const metadata: Metadata = {
   title: "Our Schools — Seedling Group of Schools",
+  alternates: { canonical: "https://seedlingschools.com/schools" },
+  openGraph: { title: "Our Schools — Seedling Group of Schools", description: "Four schools across two Jaipur campuses, offering CBSE and Cambridge pathways.", url: "https://seedlingschools.com/schools", images: [{ url: "/og-group-campus.jpg", width: 1200, height: 630 }] },
+  twitter: { card: "summary_large_image", title: "Our Schools — Seedling Group of Schools", description: "Four schools across two Jaipur campuses, offering CBSE and Cambridge pathways.", images: ["/og-group-campus.jpg"] },
   description:
     "Two CBSE campuses and two Cambridge campuses, one group standard throughout.",
   ...canonicalFor("/schools"),
@@ -15,18 +18,18 @@ const GROUPS = [
   {
     board: "CBSE",
     heading: "The CBSE campuses",
-    tagline: "Two campuses, one curriculum, the same standard throughout.",
+    tagline: "Two Jaipur campuses offering the CBSE curriculum.",
     schools: [
       {
         name: "Seedling Public School",
-        stage: "Class I – XII",
-        note: "The foundation years, where reading, reasoning and curiosity are built into daily habit.",
+        stage: "CBSE pathway",
+        note: "A CBSE school supporting students throughout their school years.",
         href: LINKS.sps,
       },
       {
         name: "Seedling Modern High School",
-        stage: "Class I – XII",
-        note: "Senior schooling with board preparation, streams and the beginnings of a career direction.",
+        stage: "CBSE pathway",
+        note: "A CBSE school supporting students throughout their school years.",
         href: LINKS.smhs,
       },
     ],
@@ -38,13 +41,13 @@ const GROUPS = [
     schools: [
       {
         name: "Seedling International Academy",
-        stage: "Early Years – A Level",
+        stage: "Cambridge pathway",
         note: "An internationally benchmarked route for families planning study abroad.",
         href: LINKS.sia,
       },
       {
         name: "Seedling Modern International Academy",
-        stage: "Class I – XII",
+        stage: "Cambridge pathway",
         note: "A second Cambridge campus in Durgapura, extending the international route.",
         href: LINKS.smia,
       },
@@ -64,7 +67,7 @@ export default function SchoolsPage() {
               Our Schools
             </p>
             <h1 className="mt-5 max-w-2xl font-display text-4xl font-semibold leading-tight tracking-tight text-paper-50 sm:text-5xl">
-              Four campuses, two boards, one standard.
+              Four schools, two boards, two Jaipur campuses.
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-paper-200">
               Pick the board that fits your child&rsquo;s route — the

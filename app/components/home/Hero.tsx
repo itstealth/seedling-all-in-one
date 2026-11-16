@@ -26,19 +26,18 @@ export default function Hero() {
           <div className="hero-seq">
             <p className="eyebrow flex items-center gap-3 text-paper-100">
               <span className="h-px w-8 bg-paper-100" aria-hidden="true" />
-              Jaipur · Established 1992
+              Jaipur · Four schools across two campuses
             </p>
 
             <h1 className="mt-6 max-w-4xl font-display text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-paper-50 sm:text-6xl lg:text-7xl">
-              The Journey From Nursery
+              From Nursery to Class XII
               <br className="hidden sm:block" />{" "}
-              <span className="italic text-paper-100">to University</span>
+              <span className="italic text-paper-100">and beyond</span>
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-paper-200">
-              One group, five institutions, and a single unbroken path — from
-              Playgroup through Class XII, across CBSE and Cambridge, and out
-              into the world.
+              Four schools across two Jaipur campuses, with CBSE and Cambridge
+              pathways and a shared commitment to each student&rsquo;s growth.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-3">

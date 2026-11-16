@@ -39,7 +39,7 @@ test("the group switcher shows each school logo", () => {
 
 test("links to the alumni page", () => {
   render(<Nav />);
-  const alumni = screen.getAllByRole("link", { name: /^alumni$/i });
+  const alumni = screen.getAllByRole("link", { name: /^smhs alumni$/i });
   expect(alumni.length).toBeGreaterThan(0);
   for (const link of alumni) {
     expect(link).toHaveAttribute(
@@ -55,7 +55,7 @@ test("outbound links carry noopener noreferrer", () => {
     .getAllByRole("link")
     .filter((link) => link.getAttribute("href")?.startsWith("http"));
   // Four school tabs, plus Alumni in both the desktop bar and the mobile menu.
-  expect(outbound).toHaveLength(6);
+  expect(outbound).toHaveLength(14);
   for (const link of outbound) {
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
@@ -69,18 +69,18 @@ test("links to each on-page section", () => {
       .getAllByRole("link", { name })
       .map((link) => link.getAttribute("href"));
 
-  expect(href(/the journey/i)).toContain("#journey");
-  expect(href(/our schools/i)).toContain("#schools");
-  expect(href(/leadership/i)).toContain("#director");
+  expect(href(/the journey/i)).toContain("/#journey");
+  expect(href(/our schools/i)).toContain("/#schools");
+  expect(href(/leadership/i)).toContain("/#director");
   expect(
     screen.getByRole("link", { name: /choose a school/i }),
-  ).toHaveAttribute("href", "#schools");
+  ).toHaveAttribute("href", "/#schools");
 });
 
 test("the menu is reachable without JavaScript", () => {
   const { container } = render(<Nav />);
   // A <details> disclosure, so the mobile menu opens with no client bundle.
-  const menu = container.querySelector("details");
+  const menu = container.querySelector("summary[aria-label=\"Menu\"]")?.parentElement;
   expect(menu).not.toBeNull();
   expect(menu?.querySelector("summary")).toHaveAttribute("aria-label", "Menu");
 });

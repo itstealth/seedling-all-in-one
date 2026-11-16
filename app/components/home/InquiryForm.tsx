@@ -33,9 +33,10 @@ export default function InquiryForm() {
         Share a few details and the right campus team will call you back.
       </p>
       <div className="mt-5 h-px bg-indigo-900/10" aria-hidden="true" />
+      <p className="mt-4 text-sm text-ink-muted">If the form does not load, <a className="underline" href="tel:+917413012351">call admissions on +91 74130 12351</a>.</p>
       <div
         className="npf_wgts mt-5"
-        data-height="400px"
+        data-height="720px"
         data-w={NPF_WIDGET_ID}
       />
     </div>

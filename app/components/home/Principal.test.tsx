@@ -13,7 +13,7 @@ test("names Dr. Preeti Bakshi with her portrait", () => {
 test("uses the designation the group publishes, not a principalship", () => {
   render(<Principal />);
   expect(
-    screen.getByText("Executive Director, Seedling Group of Institutions"),
+    screen.getByText("Executive Director, Seedling Group of Schools"),
   ).toBeInTheDocument();
   // The statutory principals are Shruti Kukar (SPS) and Nidhi Adha (SMHS)
   // per each school's CBSE mandatory disclosure — never claim the post here.

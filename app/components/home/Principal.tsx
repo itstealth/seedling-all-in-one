@@ -22,7 +22,7 @@ export default function Principal() {
             </h2>
 
             <p className="mt-4 text-lg text-ink-muted">
-              Executive Director, Seedling Group of Institutions
+              Executive Director, Seedling Group of Schools
             </p>
 
             <blockquote className="mt-8 border-l-2 border-marigold-500 pl-6">

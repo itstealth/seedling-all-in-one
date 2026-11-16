@@ -45,7 +45,7 @@ export default function SchoolsShowcase() {
               than a phone or tablet viewport has, and forcing it would push
               the page into horizontal scroll instead of just wrapping. */}
           <h2 className="mt-5 font-display text-3xl font-semibold leading-tight tracking-tight text-indigo-900 sm:text-4xl lg:whitespace-nowrap lg:text-5xl">
-            Four campuses, two boards, one standard.
+            Four schools, two boards, two Jaipur campuses.
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">
             Pick the board that fits your child&rsquo;s route — the standard

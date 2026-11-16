@@ -9,23 +9,23 @@ const SCHOOL_LINKS = [
 ];
 
 const GROUP_LINKS = [
-  { label: "About Us", href: LINKS.about },
-  { label: "Alumni", href: LINKS.alumni },
-  { label: "Seedling Group", href: LINKS.group },
+  { label: "SMHS: About the school", href: LINKS.about },
+  { label: "SMHS: Alumni", href: LINKS.alumni },
+  { label: "Seedling Group", href: "/#top" },
 ];
 
 export default function Footer() {
   return (
     <footer className="jaali mt-auto overflow-hidden bg-indigo-950 py-16 text-paper-200 lg:py-20">
       <div className="mx-auto max-w-6xl px-5 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1.4fr]">
           <div className="max-w-sm">
             <p className="font-display text-2xl font-semibold text-paper-50">
               Seedling Group of Schools
             </p>
             <p className="mt-4 text-[0.9375rem] leading-relaxed text-paper-200/70">
-              Carrying students from Playgroup to university since 1992, across
-              CBSE and Cambridge campuses.
+              Four schools across two Jaipur campuses, offering CBSE and
+              Cambridge pathways from early years through Class XII.
             </p>
           </div>
 
@@ -69,6 +69,23 @@ export default function Footer() {
               ))}
             </ul>
           </nav>
+          <div>
+            <p className="eyebrow text-paper-100">Jaipur campuses</p>
+            <address className="mt-5 space-y-4 text-sm not-italic leading-relaxed text-paper-200/75">
+              <p>Jawahar Nagar: Sector 4, Park Lane, Jaipur 302004<br />
+                <a className="hover:text-paper-50" href="tel:+917413012351">SPS admissions: +91 74130 12351</a><br />
+                <a href="tel:+911413623000">SPS office: 0141 3623000</a><br />
+                <a href="mailto:seedlingacademy@hotmail.com">seedlingacademy@hotmail.com</a><br />
+                <a className="underline underline-offset-4 hover:text-paper-50" href="https://maps.google.com/?q=Sector+4+Park+Lane+Jawahar+Nagar+Jaipur+302004" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+              </p>
+              <p>Durgapura: Ashok Marg, Mahaveer Nagar-II, Jaipur 302018<br />
+                <a className="hover:text-paper-50" href="tel:+919587772837">SMHS admissions: +91 95877 72837</a><br />
+                <a href="tel:+911413624000">SMHS office: 0141 3624000</a><br />
+                <a href="mailto:smhsjaipur@jnujaipur.ac.in">smhsjaipur@jnujaipur.ac.in</a><br />
+                <a className="underline underline-offset-4 hover:text-paper-50" href="https://maps.google.com/?q=Ashok+Marg+Mahaveer+Nagar+II+Durgapura+Jaipur+302018" target="_blank" rel="noopener noreferrer">View on Google Maps</a>
+              </p>
+            </address>
+          </div>
         </div>
 
         <p className="mt-14 border-t border-paper-200/12 pt-7 text-xs text-paper-200/50">

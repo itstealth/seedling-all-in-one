@@ -4,6 +4,7 @@ import ApplyForm, { type SchoolOption } from "./ApplyForm";
 import { canonicalFor } from "@/app/site-metadata";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "https://seedlingschools.com/admissions/apply" },
   title: "Apply Online — Seedling Group of Schools",
   description:
     "Submit an admission application and pay the registration fee online for any Seedling campus in Jaipur.",

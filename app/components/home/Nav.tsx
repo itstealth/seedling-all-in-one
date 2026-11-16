@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import { BASE_PATH, LINKS, external } from "./links";
 import HeaderMenuCloser from "./HeaderMenuCloser";
@@ -6,7 +7,7 @@ const SCHOOL_TABS = [
   {
     label: "SPS",
     href: LINKS.sps,
-    logo: `${BASE_PATH}/logos/sps-logo.png`,
+    logo: `${BASE_PATH}/logos/sps-logo.webp`,
     icon: `${BASE_PATH}/logos/sps-icon.png`,
     alt: "Seedling Public School",
     width: "w-20",
@@ -22,7 +23,7 @@ const SCHOOL_TABS = [
   {
     label: "SIA",
     href: LINKS.sia,
-    logo: `${BASE_PATH}/logos/sia-logo-dark.png`,
+    logo: `${BASE_PATH}/logos/sia-logo-dark.webp`,
     icon: `${BASE_PATH}/logos/sia-icon.png`,
     alt: "Seedling International Academy",
     width: "w-24",
@@ -38,8 +39,8 @@ const SCHOOL_TABS = [
 ];
 
 const SECTIONS = [
-  { label: "The Journey", href: "#journey" },
-  { label: "Leadership", href: "#director" },
+  { label: "The Journey", href: "/#journey" },
+  { label: "Leadership", href: "/#director" },
 ];
 
 export default function Nav() {
@@ -53,7 +54,7 @@ export default function Nav() {
       <div className="border-b border-paper-200/10 bg-indigo-950">
         <div className="mx-auto flex max-w-6xl items-stretch overflow-x-auto sm:px-5 lg:justify-end lg:overflow-visible lg:px-8">
           {SCHOOL_TABS.map((school) => (
-            <a
+            <Link
               key={school.label}
               href={school.href}
               {...external}
@@ -82,21 +83,21 @@ export default function Nav() {
                   className="object-contain"
                 />
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
 
       <nav className="relative border-b border-indigo-800/10 bg-paper-50/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 lg:px-8">
-          <a href="#top" className="flex items-baseline gap-2.5">
+          <Link href="/#top" className="flex items-baseline gap-2.5">
             <span className="font-display text-lg font-semibold tracking-tight text-indigo-800">
               Seedling
             </span>
             <span className="hidden text-[0.6875rem] font-semibold uppercase tracking-[0.16em] text-ink-muted sm:inline">
               Group of Schools
             </span>
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-7 text-sm font-medium text-ink-muted lg:flex">
             <li>
@@ -116,25 +117,25 @@ export default function Nav() {
                 </summary>
                 <ul className="absolute left-0 top-full z-50 mt-3 hidden w-72 rounded-xl border border-indigo-800/10 bg-paper-50 p-2 text-sm text-ink-muted shadow-lg group-open:block">
                   <li>
-                    <a
-                      href="#schools"
+                    <Link
+                      href="/#schools"
                       aria-label="Our Schools: All Schools"
                       className="block rounded-lg px-3 py-2 font-semibold text-indigo-800 transition-colors hover:bg-indigo-800/5"
                     >
                       All Schools
-                    </a>
+                    </Link>
                   </li>
                   <li className="my-1 border-t border-indigo-800/10" aria-hidden="true" />
                   {SCHOOL_TABS.map((school) => (
                     <li key={school.label}>
-                      <a
+                      <Link
                         href={school.href}
                         {...external}
                         aria-label={"Visit " + school.alt}
                         className="block rounded-lg px-3 py-2 transition-colors hover:bg-indigo-800/5 hover:text-indigo-700"
                       >
                         {school.alt}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -142,24 +143,24 @@ export default function Nav() {
             </li>
             {SECTIONS.map((section) => (
               <li key={section.href}>
-                <a href={section.href} className="transition-colors hover:text-indigo-700">
+                <Link href={section.href} className="transition-colors hover:text-indigo-700">
                   {section.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a href={LINKS.alumni} {...external} className="transition-colors hover:text-indigo-700">
-                Alumni
-              </a>
+              <Link href={LINKS.alumni} {...external} className="transition-colors hover:text-indigo-700">
+                SMHS Alumni
+              </Link>
             </li>
           </ul>
           <div className="flex items-center gap-1.5">
-            <a
-              href="#schools"
+            <Link
+              href="/#schools"
               className="rounded-full bg-indigo-800 px-4 py-2 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700"
             >
               Choose a school
-            </a>
+            </Link>
 
             {/* A disclosure rather than a scripted drawer: the menu opens with
                 no client JavaScript, and keyboard support comes for free. */}
@@ -206,24 +207,24 @@ export default function Nav() {
                     </summary>
                     <ul className="pb-2 pl-3">
                       <li>
-                        <a
-                          href="#schools"
+                        <Link
+                          href="/#schools"
                           aria-label="Our Schools: All Schools"
                           className="block rounded-lg py-2 transition-colors hover:text-indigo-700"
                         >
                           All Schools
-                        </a>
+                        </Link>
                       </li>
                       {SCHOOL_TABS.map((school) => (
                         <li key={school.label}>
-                          <a
+                          <Link
                             href={school.href}
                             {...external}
                             aria-label={"Visit " + school.alt}
                             className="block rounded-lg py-2 transition-colors hover:text-indigo-700"
                           >
                             {school.alt}
-                          </a>
+                          </Link>
                         </li>
                       ))}
                     </ul>
@@ -231,15 +232,15 @@ export default function Nav() {
                 </li>
                 {SECTIONS.map((section) => (
                   <li key={section.href}>
-                    <a href={section.href} className="block py-2.5 transition-colors hover:text-indigo-700">
+                    <Link href={section.href} className="block py-2.5 transition-colors hover:text-indigo-700">
                       {section.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
                 <li>
-                  <a href={LINKS.alumni} {...external} className="block py-2.5 transition-colors hover:text-indigo-700">
-                    Alumni
-                  </a>
+                  <Link href={LINKS.alumni} {...external} className="block py-2.5 transition-colors hover:text-indigo-700">
+                    SMHS Alumni
+                  </Link>
                 </li>
               </ul>
             </details>

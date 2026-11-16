@@ -4,11 +4,11 @@ import Footer from "./Footer";
 
 test("renders links to each property and a copyright line", () => {
   render(<Footer />);
-  expect(screen.getByRole("link", { name: /^sps\b/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /^sps \(cbse\)/i })).toHaveAttribute(
     "href",
     "https://sps.seedlingschools.com",
   );
-  expect(screen.getByRole("link", { name: /^smhs\b/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /^smhs \(cbse\)/i })).toHaveAttribute(
     "href",
     "https://smhs.seedlingschools.com",
   );
@@ -22,11 +22,11 @@ test("renders links to each property and a copyright line", () => {
     "href",
     "https://cambridge.seedlingschools.com/campuses/smia",
   );
-  expect(screen.getByRole("link", { name: /^alumni$/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /^smhs: alumni$/i })).toHaveAttribute(
     "href",
     "https://smhs.seedlingschools.com/alumni",
   );
-  expect(screen.getByRole("link", { name: /^about us$/i })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: /^smhs: about the school$/i })).toHaveAttribute(
     "href",
     "https://smhs.seedlingschools.com/about",
   );
@@ -35,7 +35,7 @@ test("renders links to each property and a copyright line", () => {
 
 test("outbound links carry noopener noreferrer", () => {
   render(<Footer />);
-  for (const link of screen.getAllByRole("link")) {
+  for (const link of screen.getAllByRole("link").filter(link => link.getAttribute("href")?.startsWith("http"))) {
     expect(link).toHaveAttribute("target", "_blank");
     expect(link).toHaveAttribute("rel", "noopener noreferrer");
   }

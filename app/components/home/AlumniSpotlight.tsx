@@ -33,8 +33,8 @@ export default function AlumniSpotlight() {
               The Pride of Seedling
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-ink-muted">
-              Five thousand alumni, across fifty nations — in enterprise, in
-              uniform, in design studios.
+              Meet Seedling alumni working across enterprise, public service,
+              design and other fields.
             </p>
           </div>
 
@@ -43,7 +43,7 @@ export default function AlumniSpotlight() {
             {...external}
             className="group inline-flex items-center gap-2 rounded-full border border-indigo-800/20 px-5 py-3 text-sm font-semibold text-indigo-800 transition-colors hover:border-indigo-700 hover:bg-indigo-800 hover:text-paper-50"
           >
-            See more alumni
+            See more SMHS alumni
             <span
               aria-hidden="true"
               className="transition-transform group-hover:translate-x-1"

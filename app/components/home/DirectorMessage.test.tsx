@@ -6,7 +6,7 @@ test("introduces Dr. Sandeep Bakshi with his designation and portrait", () => {
   render(<DirectorMessage />);
   expect(screen.getByText("Dr. Sandeep Bakshi")).toBeInTheDocument();
   expect(
-    screen.getByText("CEO & Director, Seedling Group of Institutions"),
+    screen.getByText("CEO & Director, Seedling Group of Schools"),
   ).toBeInTheDocument();
   expect(screen.getByAltText("Dr. Sandeep Bakshi")).toBeInTheDocument();
 });
@@ -14,6 +14,6 @@ test("introduces Dr. Sandeep Bakshi with his designation and portrait", () => {
 test("links to the full communique", () => {
   render(<DirectorMessage />);
   expect(
-    screen.getByRole("link", { name: /read the full communiqu/i }),
+    screen.getByRole("link", { name: /read the SMHS communiqu/i }),
   ).toHaveAttribute("href", "https://smhs.seedlingschools.com/about");
 });

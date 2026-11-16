@@ -41,7 +41,7 @@ export default function ThankYouPage() {
         </Link>
         <span className="hidden items-center gap-2 text-xs font-medium tracking-wide text-paper-200/65 sm:flex">
           <span className="h-1.5 w-1.5 rounded-full bg-marigold-500" />
-          Jaipur · Since 1992
+          Jaipur · Seedling Group of Schools
         </span>
       </header>
 

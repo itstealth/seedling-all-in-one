@@ -15,7 +15,7 @@ export const SITE_ICON = "https://seedlingschools.com/assets/img/favicon.png";
 
 /** 1200x630 crop of public/campus/about-banner.jpg, the hero photograph. */
 export const OG_IMAGE = {
-  url: "/og-image.jpg",
+  url: "/og-group-campus.jpg",
   width: 1200,
   height: 630,
   alt: "Seedling students in red tartan pipe-band uniforms marching across the school sports ground",

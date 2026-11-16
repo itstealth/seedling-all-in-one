@@ -4,13 +4,13 @@ const ROUTES = [
   {
     name: "Seedling Public School",
     board: "CBSE",
-    stage: "Class I – XII",
+    stage: "CBSE pathway",
     href: LINKS.sps,
   },
   {
     name: "Seedling Modern High School",
     board: "CBSE",
-    stage: "Class I – XII",
+    stage: "CBSE pathway",
     href: LINKS.smhs,
   },
   {
@@ -18,6 +18,12 @@ const ROUTES = [
     board: "Cambridge",
     stage: "Early Years – A Level",
     href: LINKS.sia,
+  },
+  {
+    name: "Seedling Modern International Academy",
+    board: "Cambridge",
+    stage: "Cambridge pathway",
+    href: LINKS.smia,
   },
 ] as const;
 
@@ -44,7 +50,7 @@ export default function Admissions() {
             </p>
           </div>
 
-          <ul className="mt-11 grid gap-4 lg:grid-cols-3" data-reveal-group>
+          <ul className="mt-11 grid gap-4 sm:grid-cols-2 xl:grid-cols-4" data-reveal-group>
             {ROUTES.map((route) => (
               <li key={route.name}>
                 <a
@@ -78,8 +84,7 @@ export default function Admissions() {
           <p className="mt-9 text-[0.9375rem] text-paper-100">
             Not sure which fits?{" "}
             <a
-              href={LINKS.group}
-              {...external}
+              href="#enquire"
               className="font-semibold text-paper-50 underline decoration-paper-50/30 underline-offset-4 transition-colors hover:decoration-paper-50"
             >
               Talk to the group office

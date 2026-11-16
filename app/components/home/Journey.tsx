@@ -2,6 +2,7 @@ const STAGES = [
   {
     // Rendered uppercase by CSS, so it reads "PLAYGROUP – KG".
     stage: "Playgroup – KG",
+    href: "/wonderland",
     name: "Seedling Wonderland Kids League",
     board: "Early years",
     note: "First classrooms, first friendships. Play-led learning that makes school somewhere a child wants to be.",
@@ -10,22 +11,22 @@ const STAGES = [
     stage: "Class I – XII",
     name: "Seedling Public School",
     board: "CBSE",
-    note: "The foundation years, where reading, reasoning and curiosity are built into daily habit.",
+    note: "A complete CBSE school supporting students throughout their school years.",
   },
   {
     stage: "Class I – XII",
     name: "Seedling Modern High School",
     board: "CBSE",
-    note: "Senior schooling with board preparation, streams and the beginnings of a career direction.",
+    note: "A complete CBSE school supporting students throughout their school years.",
   },
   {
-    stage: "Class I – XII",
+    stage: "Cambridge pathway",
     name: "Seedling International Academy",
     board: "Cambridge",
     note: "An internationally benchmarked route for families planning study abroad.",
   },
   {
-    stage: "Class I – XII",
+    stage: "Cambridge pathway",
     name: "Seedling Modern International Academy",
     board: "Cambridge",
     note: "A second Cambridge campus in Durgapura, extending the international route.",
@@ -33,8 +34,8 @@ const STAGES = [
   {
     stage: "Beyond school",
     name: "University, and what follows",
-    board: "50+ nations",
-    note: "Alumni in engineering, defence, design and enterprise across the world.",
+    board: "Alumni",
+    note: "Our alumni continue their education and careers in many fields.",
   },
 ];
 
@@ -48,12 +49,11 @@ export default function Journey() {
             The through-line
           </p>
           <h2 className="mt-5 font-display text-3xl font-semibold leading-snug tracking-tight text-indigo-900 sm:text-4xl lg:text-5xl">
-            A child joins us at three. We are still here at eighteen.
+            A connected school journey, from early learning through graduation.
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-ink-muted">
-            Most families change schools two or three times. Within the Seedling
-            Group, each stage hands over to the next — same standards, same
-            people, no restarting.
+            Seedling schools offer families a choice of CBSE and Cambridge
+            pathways across four schools in Jaipur.
           </p>
         </div>
 
@@ -86,7 +86,7 @@ export default function Journey() {
                 {item.stage}
               </p>
               <h3 className="mt-2 font-display text-xl font-semibold text-indigo-900 lg:text-2xl">
-                {item.name}
+                {"href" in item ? <a href={item.href} className="underline decoration-indigo-800/25 underline-offset-4">{item.name}</a> : item.name}
               </h3>
               <p className="mt-1.5 inline-block rounded-full bg-indigo-800/8 px-2.5 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.1em] text-indigo-700">
                 {item.board}

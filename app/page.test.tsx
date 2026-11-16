@@ -7,7 +7,7 @@ test('renders the group homepage headline', () => {
   expect(
     screen.getByRole('heading', {
       level: 1,
-      name: /the journey from nursery\s+to university/i,
+      name: /from nursery to class xii\s+and beyond/i,
     })
   ).toBeInTheDocument()
 })
@@ -19,8 +19,8 @@ test('renders the brief’s sections in order', () => {
     .map((heading) => heading.textContent)
 
   expect(sections).toEqual([
-    'Four campuses, two boards, one standard.',
-    'A child joins us at three. We are still here at eighteen.',
+    'Four schools, two boards, two Jaipur campuses.',
+    'A connected school journey, from early learning through graduation.',
     'Dr. Sandeep Bakshi',
     'Dr. Preeti Bakshi',
     'The Pride of Seedling',

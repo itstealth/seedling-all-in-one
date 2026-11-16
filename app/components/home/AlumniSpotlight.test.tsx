@@ -8,6 +8,6 @@ test("renders the three named alumni and a link to the full alumni page", () => 
   expect(screen.getByText(/abhishek tripathi/i)).toBeInTheDocument();
   expect(screen.getByText(/shashank jain/i)).toBeInTheDocument();
   expect(
-    screen.getByRole("link", { name: /see more alumni/i }),
+    screen.getByRole("link", { name: /see more SMHS alumni/i }),
   ).toHaveAttribute("href", "https://smhs.seedlingschools.com/alumni");
 });

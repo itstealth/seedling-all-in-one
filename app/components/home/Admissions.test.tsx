@@ -22,7 +22,7 @@ test("offers the group office as a fallback", () => {
   render(<Admissions />);
   expect(
     screen.getByRole("link", { name: /talk to the group office/i }),
-  ).toHaveAttribute("href", "https://seedlingschools.com");
+  ).toHaveAttribute("href", "#enquire");
 });
 
 test("outbound links carry noopener noreferrer", () => {

@@ -18,6 +18,31 @@ const nextConfig: NextConfig = {
   // `sharp` isn't installed on the Windows Server 2016 host, so image
   // optimization stays off; the public/ images are pre-sized.
   images: { unoptimized: true },
+
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.seedlingschools.com" }],
+        destination: "https://seedlingschools.com/:path*",
+        permanent: true,
+      },
+      { source: "/about-us.php", destination: "https://seedlingschools.com/schools", permanent: true },
+      { source: "/swkl.php", destination: "https://seedlingschools.com/wonderland", permanent: true },
+      { source: "/media.php", destination: "https://smhs.seedlingschools.com/news-and-events", permanent: true },
+      { source: "/admission.php", destination: "https://seedlingschools.com/admissions", permanent: true },
+      { source: "/admission-online.php", destination: "https://seedlingschools.com/admissions/apply", permanent: true },
+      { source: "/admission-procedure.php", destination: "https://seedlingschools.com/admissions", permanent: true },
+      { source: "/career.php", destination: "https://seedlingschools.com/career", permanent: true },
+      { source: "/alumni.php", destination: "https://smhs.seedlingschools.com/alumni", permanent: true },
+      { source: "/erp-login.php", destination: "https://sps.seedlingschools.com/erp-login", permanent: true },
+      {
+        source: "/sia.php/swkl.php",
+        destination: "https://seedlingschools.com",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
