@@ -36,7 +36,7 @@ export default function InquiryForm() {
       <p className="mt-4 text-sm text-ink-muted">If the form does not load, <a className="underline" href="tel:+917413012351">call admissions on +91 74130 12351</a>.</p>
       <div
         className="npf_wgts mt-5"
-        data-height="720px"
+        data-height="1100px"
         data-w={NPF_WIDGET_ID}
       />
     </div>

@@ -4,7 +4,7 @@ import InquiryForm from "./InquiryForm";
 
 test("gives the admissions widget room for all fields and a reachable enquiry anchor", () => {
   const { container } = render(<InquiryForm />);
-  expect(container.querySelector("#enquire .npf_wgts")).toHaveAttribute("data-height", "720px");
+  expect(container.querySelector("#enquire .npf_wgts")).toHaveAttribute("data-height", "1100px");
 });
 
 test("loads the enquiry provider only once when the form remounts", () => {

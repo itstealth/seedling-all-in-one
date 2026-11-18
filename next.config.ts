@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Isolate generated route types when building a release beside the active build.
+  typescript: { tsconfigPath: process.env.NEXT_TSCONFIG_PATH || "tsconfig.json" },
+  // Keep release builds from exhausting the shared Windows host.
+  experimental: { cpus: 1 },
   // Lets a build target a scratch dir (NEXT_BUILD_DIR=.next-new) so the running
   // app keeps serving the current build until the new one is swapped in.
   distDir: process.env.NEXT_BUILD_DIR || ".next",
@@ -25,21 +29,21 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         has: [{ type: "host", value: "www.seedlingschools.com" }],
         destination: "https://seedlingschools.com/:path*",
-        permanent: true,
+        statusCode: 301,
       },
-      { source: "/about-us.php", destination: "https://seedlingschools.com/schools", permanent: true },
-      { source: "/swkl.php", destination: "https://seedlingschools.com/wonderland", permanent: true },
-      { source: "/media.php", destination: "https://smhs.seedlingschools.com/news-and-events", permanent: true },
-      { source: "/admission.php", destination: "https://seedlingschools.com/admissions", permanent: true },
-      { source: "/admission-online.php", destination: "https://seedlingschools.com/admissions/apply", permanent: true },
-      { source: "/admission-procedure.php", destination: "https://seedlingschools.com/admissions", permanent: true },
-      { source: "/career.php", destination: "https://seedlingschools.com/career", permanent: true },
-      { source: "/alumni.php", destination: "https://smhs.seedlingschools.com/alumni", permanent: true },
-      { source: "/erp-login.php", destination: "https://sps.seedlingschools.com/erp-login", permanent: true },
+      { source: "/about-us.php", destination: "https://seedlingschools.com/schools", statusCode: 301 },
+      { source: "/swkl.php", destination: "https://seedlingschools.com/wonderland", statusCode: 301 },
+      { source: "/media.php", destination: "https://smhs.seedlingschools.com/news-and-events", statusCode: 301 },
+      { source: "/admission.php", destination: "https://seedlingschools.com/admissions", statusCode: 301 },
+      { source: "/admission-online.php", destination: "https://seedlingschools.com/admissions/apply", statusCode: 301 },
+      { source: "/admission-procedure.php", destination: "https://seedlingschools.com/admissions", statusCode: 301 },
+      { source: "/career.php", destination: "https://seedlingschools.com/career", statusCode: 301 },
+      { source: "/alumni.php", destination: "https://smhs.seedlingschools.com/alumni", statusCode: 301 },
+      { source: "/erp-login.php", destination: "https://sps.seedlingschools.com/erp-login", statusCode: 301 },
       {
         source: "/sia.php/swkl.php",
         destination: "https://seedlingschools.com",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },

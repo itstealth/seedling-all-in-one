@@ -4,7 +4,7 @@ import Script from "next/script";
 import Reveal from "./components/Reveal";
 import "./globals.css";
 import LeadAttribution from '@/app/components/LeadAttribution';
-import { SHARED_OPEN_GRAPH, SITE_ICON, SITE_URL } from "./site-metadata";
+import { SHARED_OPEN_GRAPH, OG_IMAGE, SITE_ICON, SITE_URL } from "./site-metadata";
 
 /**
  * Google Tag Manager. The legacy PHP pages carry this same container via
@@ -43,7 +43,12 @@ export const metadata: Metadata = {
   // No url here: og:url belongs to each page, set alongside its canonical.
   // og:title and og:description fall back to the page's own title/description.
   openGraph: SHARED_OPEN_GRAPH,
-  twitter: { card: "summary_large_image" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Seedling Group of Schools | Jaipur",
+    description: "Explore four schools across two Jaipur campuses, with CBSE and Cambridge pathways from early years through Class XII.",
+    images: [OG_IMAGE.url],
+  },
 };
 
 export default function RootLayout({

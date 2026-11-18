@@ -22,8 +22,8 @@ test("the group sitemap excludes the retired blog and robots advertises it", () 
 test("legacy destinations preserve admissions and careers intent", async () => {
   const redirects = await config.redirects!();
   expect(redirects).toEqual(expect.arrayContaining([
-    expect.objectContaining({ source: "/admission-online.php", destination: "https://seedlingschools.com/admissions/apply", permanent: true }),
-    expect.objectContaining({ source: "/career.php", destination: "https://seedlingschools.com/career", permanent: true }),
-    expect.objectContaining({ source: "/swkl.php", destination: "https://seedlingschools.com/wonderland", permanent: true }),
+    expect.objectContaining({ source: "/admission-online.php", destination: "https://seedlingschools.com/admissions/apply", statusCode: 301 }),
+    expect.objectContaining({ source: "/career.php", destination: "https://seedlingschools.com/career", statusCode: 301 }),
+    expect.objectContaining({ source: "/swkl.php", destination: "https://seedlingschools.com/wonderland", statusCode: 301 }),
   ]));
 });

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Nav from "../components/home/Nav";
 import Footer from "../components/home/Footer";
 import { LINKS, external } from "../components/home/links";
-import { canonicalFor } from "../site-metadata";
 
 export const metadata: Metadata = {
   title: "Our Schools — Seedling Group of Schools",
@@ -10,8 +9,7 @@ export const metadata: Metadata = {
   openGraph: { title: "Our Schools — Seedling Group of Schools", description: "Four schools across two Jaipur campuses, offering CBSE and Cambridge pathways.", url: "https://seedlingschools.com/schools", images: [{ url: "/og-group-campus.jpg", width: 1200, height: 630 }] },
   twitter: { card: "summary_large_image", title: "Our Schools — Seedling Group of Schools", description: "Four schools across two Jaipur campuses, offering CBSE and Cambridge pathways.", images: ["/og-group-campus.jpg"] },
   description:
-    "Two CBSE campuses and two Cambridge campuses, one group standard throughout.",
-  ...canonicalFor("/schools"),
+    "Four schools across two Jaipur campuses, offering CBSE and Cambridge pathways.",
 };
 
 const GROUPS = [
