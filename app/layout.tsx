@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   // Lets pages give relative URLs (og:image, canonicals) that resolve to
   // absolute ones. Canonicals themselves are set per page — see site-metadata.
   metadataBase: new URL(SITE_URL),
-  title: "Seedling Group of Schools | Jaipur",
+  title: "Best School in Jaipur | CBSE & Cambridge – Seedling Group",
   description:
-    "Explore four schools across two Jaipur campuses, with CBSE and Cambridge pathways from early years through Class XII.",
+    "Seedling Group is among the best schools in Jaipur — 4 campuses offering CBSE & Cambridge (IGCSE/A-Level) education from early years to senior school.",
   icons: {
     icon: SITE_ICON,
   },
