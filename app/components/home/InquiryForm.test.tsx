@@ -10,6 +10,14 @@ test("sizes the admissions widget to the form, without a large empty gap", () =>
   expect(widget?.className).toContain("sm:[&_iframe]:h-[710px]");
 });
 
+test("shows the form at 88% on desktop, with the box cut to the scaled height", () => {
+  const { container } = render(<InquiryForm />);
+  const classes = container.querySelector("#enquire .npf_wgts")?.className ?? "";
+  expect(classes).toContain("lg:[&_iframe]:scale-[0.88]");
+  expect(classes).toContain("lg:[&_iframe]:w-[113.64%]");
+  expect(classes).toContain("lg:h-[625px]");
+});
+
 test("loads the enquiry provider only once when the form remounts", () => {
   document.querySelectorAll('script[data-npf-loader="true"]').forEach(script => script.remove());
   const first = render(<InquiryForm />);
