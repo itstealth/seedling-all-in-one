@@ -26,7 +26,7 @@ export default function InquiryForm() {
       data-reveal-bloom
       className="rounded-2xl bg-paper-50 p-6 pb-3 shadow-2xl shadow-indigo-950/25 sm:p-7 sm:pb-4"
     >
-      <p className="font-display text-xl font-semibold leading-snug text-indigo-950">
+      <p className="text-center font-display text-xl font-semibold leading-snug text-indigo-950">
         Talk to our advisor
       </p>
       {/* Meritto draws the form in an iframe of fixed height (it never
