@@ -2,9 +2,12 @@ import { expect, test } from "vitest";
 import { render } from "@testing-library/react";
 import InquiryForm from "./InquiryForm";
 
-test("gives the admissions widget room for all fields and a reachable enquiry anchor", () => {
+test("sizes the admissions widget to the form, without a large empty gap", () => {
   const { container } = render(<InquiryForm />);
-  expect(container.querySelector("#enquire .npf_wgts")).toHaveAttribute("data-height", "1100px");
+  const widget = container.querySelector("#enquire .npf_wgts");
+  expect(widget).toHaveAttribute("data-height", "710px");
+  expect(widget?.className).toContain("[&_iframe]:h-[740px]");
+  expect(widget?.className).toContain("sm:[&_iframe]:h-[710px]");
 });
 
 test("loads the enquiry provider only once when the form remounts", () => {

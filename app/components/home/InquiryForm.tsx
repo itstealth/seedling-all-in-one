@@ -17,14 +17,14 @@ export default function InquiryForm() {
     document.body.appendChild(script);
   }, []);
 
-  // id="enquire": target of the phone action bar's "Enquire Now"; scroll-mt-14
-  // clears the two-row sticky header on top of the global scroll padding.
+  // id="enquire": target of the phone action bar's "Enquire Now"; the global
+  // scroll padding already clears the (now single-row) sticky header.
   return (
     <div
       id="enquire"
       data-reveal
       data-reveal-bloom
-      className="scroll-mt-14 rounded-2xl bg-paper-50 p-6 shadow-2xl shadow-indigo-950/25 sm:p-7"
+      className="rounded-2xl bg-paper-50 p-6 shadow-2xl shadow-indigo-950/25 sm:p-7"
     >
       <p className="font-display text-xl font-semibold leading-snug text-indigo-950">
         Talk to our admissions team
@@ -34,9 +34,14 @@ export default function InquiryForm() {
       </p>
       <div className="mt-5 h-px bg-indigo-900/10" aria-hidden="true" />
       <p className="mt-4 text-sm text-ink-muted">If the form does not load, <a className="underline" href="tel:+917413012351">call admissions on +91 74130 12351</a>.</p>
+      {/* Meritto draws the form in an iframe of fixed height (it never
+          resizes itself), so the height is ours to set. Measured Nov 2026
+          with every validation message showing: ~710px on a 320px phone,
+          ~695px on a 390px phone, 650-695px from tablet up. 1100px left
+          a large empty gap under the Submit button. */}
       <div
-        className="npf_wgts mt-5"
-        data-height="1100px"
+        className="npf_wgts mt-5 [&_iframe]:h-[740px] sm:[&_iframe]:h-[710px]"
+        data-height="710px"
         data-w={NPF_WIDGET_ID}
       />
     </div>
