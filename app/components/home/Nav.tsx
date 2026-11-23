@@ -30,6 +30,47 @@ export default function Nav() {
           </Link>
 
           <ul className="hidden items-center gap-7 text-sm font-medium text-ink-muted lg:flex">
+            <li>
+              <details className="group relative">
+                <summary className="flex cursor-pointer list-none items-center gap-1 transition-colors hover:text-indigo-700 [&::-webkit-details-marker]:hidden">
+                  Our Schools
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 16 16"
+                    className="h-3.5 w-3.5 transition-transform group-open:rotate-180"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                  >
+                    <path d="m4 6 4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </summary>
+                <ul className="absolute left-0 top-full z-50 mt-3 hidden w-72 rounded-xl border border-indigo-800/10 bg-paper-50 p-2 text-sm text-ink-muted shadow-lg group-open:block">
+                  <li>
+                    <Link
+                      href="/#schools"
+                      aria-label="Our Schools: All Schools"
+                      className="block rounded-lg px-3 py-2 font-semibold text-indigo-800 transition-colors hover:bg-indigo-800/5"
+                    >
+                      All Schools
+                    </Link>
+                  </li>
+                  <li className="my-1 border-t border-indigo-800/10" aria-hidden="true" />
+                  {SCHOOL_TABS.map((school) => (
+                    <li key={school.label}>
+                      <Link
+                        href={school.href}
+                        {...external}
+                        aria-label={"Visit " + school.alt}
+                        className="block rounded-lg px-3 py-2 transition-colors hover:bg-indigo-800/5 hover:text-indigo-700"
+                      >
+                        {school.alt}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
             {SECTIONS.map((section) => (
               <li key={section.href}>
                 <Link href={section.href} className="transition-colors hover:text-indigo-700">
@@ -44,10 +85,18 @@ export default function Nav() {
             </li>
           </ul>
           <div className="flex items-center gap-1.5">
-            {/* "Our Schools" lives in the header itself (it used to sit inside
-                the phone menu): the panel spans the full width under the
-                header on phones and drops down under the button on desktop. */}
-            <details className="group/schools lg:relative">
+            <Link
+              href="/#schools"
+              className="hidden rounded-full bg-indigo-800 px-4 py-2 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700 lg:inline-block"
+            >
+              Choose a school
+            </Link>
+
+            {/* Phones: "Our Schools" is the header button (it used to sit
+                inside the hamburger menu); the panel spans the full width
+                under the header. Desktop keeps "Our Schools" in the link row
+                and the "Choose a school" button, as before. */}
+            <details className="group/schools lg:hidden">
               <summary className="flex cursor-pointer list-none items-center gap-1.5 rounded-full bg-indigo-800 px-4 py-2 text-sm font-semibold text-paper-50 transition-colors hover:bg-indigo-700 [&::-webkit-details-marker]:hidden">
                 Our Schools
                 <svg
@@ -61,12 +110,12 @@ export default function Nav() {
                   <path d="m4 6 4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </summary>
-              <ul className="absolute inset-x-0 top-full border-b border-indigo-800/10 bg-paper-50 px-5 py-3 text-[0.9375rem] font-medium text-ink-muted shadow-lg lg:inset-x-auto lg:right-0 lg:mt-3 lg:w-72 lg:rounded-xl lg:border lg:p-2 lg:text-sm">
+              <ul className="absolute inset-x-0 top-full border-b border-indigo-800/10 bg-paper-50 px-5 py-3 text-[0.9375rem] font-medium text-ink-muted shadow-lg">
                 <li>
                   <Link
                     href="/#schools"
                     aria-label="Our Schools: All Schools"
-                    className="block rounded-lg py-2 font-semibold text-indigo-800 transition-colors hover:text-indigo-700 lg:px-3 lg:hover:bg-indigo-800/5"
+                    className="block rounded-lg py-2 font-semibold text-indigo-800 transition-colors hover:text-indigo-700"
                   >
                     All Schools
                   </Link>
@@ -77,7 +126,7 @@ export default function Nav() {
                       href={school.href}
                       {...external}
                       aria-label={"Visit " + school.alt}
-                      className="block rounded-lg py-2 transition-colors hover:text-indigo-700 lg:px-3 lg:hover:bg-indigo-800/5"
+                      className="block rounded-lg py-2 transition-colors hover:text-indigo-700"
                     >
                       {school.alt}
                     </Link>

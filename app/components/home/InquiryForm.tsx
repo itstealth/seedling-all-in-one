@@ -26,6 +26,9 @@ export default function InquiryForm() {
       data-reveal-bloom
       className="rounded-2xl bg-paper-50 p-6 shadow-2xl shadow-indigo-950/25 sm:p-7"
     >
+      <p className="font-display text-xl font-semibold leading-snug text-indigo-950">
+        Talk to our advisor
+      </p>
       {/* Meritto draws the form in an iframe of fixed height (it never
           resizes itself), so the height is ours to set. Measured Nov 2026
           with every validation message showing: ~710px on a 320px phone,
@@ -37,7 +40,7 @@ export default function InquiryForm() {
           then scaled, and the box is cut to the scaled height (710 x 0.88
           = 625px). Phones and tablets keep 100% so text stays easy to tap. */}
       <div
-        className="npf_wgts [&_iframe]:h-[740px] sm:[&_iframe]:h-[710px] lg:h-[625px] lg:overflow-hidden lg:[&_iframe]:w-[113.64%] lg:[&_iframe]:max-w-none lg:[&_iframe]:origin-top-left lg:[&_iframe]:scale-[0.88]"
+        className="npf_wgts mt-3 [&_iframe]:h-[740px] sm:[&_iframe]:h-[710px] lg:h-[625px] lg:overflow-hidden lg:[&_iframe]:w-[113.64%] lg:[&_iframe]:max-w-none lg:[&_iframe]:origin-top-left lg:[&_iframe]:scale-[0.88]"
         data-height="710px"
         data-w={NPF_WIDGET_ID}
       />

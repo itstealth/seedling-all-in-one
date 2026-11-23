@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import InquiryForm from "./InquiryForm";
 
 test("sizes the admissions widget to the form, without a large empty gap", () => {
@@ -26,4 +26,9 @@ test("loads the enquiry provider only once when the form remounts", () => {
   const scripts = document.querySelectorAll('script[data-npf-loader="true"]');
   expect(scripts).toHaveLength(1);
   expect(scripts[0]).toHaveAttribute("src", "https://ke9zpvp4xn.in4.widgets.nopaperforms.com/vemwgts.js");
+});
+
+test("the form is headed Talk to our advisor", () => {
+  render(<InquiryForm />);
+  expect(screen.getByText("Talk to our advisor")).toBeInTheDocument();
 });
