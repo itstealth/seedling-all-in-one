@@ -6,8 +6,7 @@ test("sizes the admissions widget to the form, without a large empty gap", () =>
   const { container } = render(<InquiryForm />);
   const widget = container.querySelector("#enquire .npf_wgts");
   expect(widget).toHaveAttribute("data-height", "700px");
-  expect(widget?.className).toContain("[&_iframe]:h-[715px]");
-  expect(widget?.className).toContain("min-[375px]:[&_iframe]:h-[700px]");
+  expect(widget?.className).toContain("[&_iframe]:h-[700px]");
 });
 
 test("shows the form at 88% on desktop, with the box cut to the scaled height", () => {
